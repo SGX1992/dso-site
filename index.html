@@ -1,0 +1,1339 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dubai Silicon Oasis — Where breakthroughs happen</title>
+<meta name="description" content="Dubai Silicon Oasis is Dubai's integrated technology city: a free zone for knowledge and innovation where 40,000+ companies and 100,000+ people build, scale and live.">
+<meta name="theme-color" content="#1C2F5B">
+<link rel="icon" href="assets/logos/dso-20.png?v=1792930961" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════ DSO DESIGN SYSTEM · TOKENS ═══════════════ */
+:root{
+  --navy:#1C2F5B; --neon:#006FFF; --warm:#BEB9A6;
+  --dark:#0A0E29; --deep:#005D94; --sky:#1396D3; --sand:#EDECE6;
+  --ink:#010101; --gray:#C8C8C8; --gray-acc:#F1F1F1; --white:#FFFFFF;
+  --orange:#FF5A26; --cyan:#00FFD4; --green:#00F061; --yellow:#FEFF48;
+  --text:var(--navy); --muted:#6B7280; --page:#F6F7F9;
+  --head:'Barlow',system-ui,sans-serif; --body:'Inter',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --r-sm:8px; --r-md:12px; --r-lg:16px; --r-xl:24px; --r-2xl:32px; --r-full:999px;
+  --sh-card:0 2px 6px rgba(28,47,91,.04),0 18px 50px -18px rgba(28,47,91,.14); --sh-float:0 6px 16px rgba(28,47,91,.05),0 32px 80px -24px rgba(28,47,91,.22);
+  --gutter:clamp(20px,6vw,120px); --max:1680px;
+  --ease:cubic-bezier(.16,1,.3,1); --ease-io:cubic-bezier(.65,0,.35,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;overflow-x:clip}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:hidden}
+body{background:var(--page);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+body.has-cursor,body.has-cursor a,body.has-cursor button,body.has-cursor summary{cursor:none}
+a{color:inherit;text-decoration:none}
+img,svg,video,canvas{display:block;max-width:100%}
+button,input,textarea,select{font:inherit;color:inherit;background:none;border:0}
+button{cursor:pointer}
+ul{list-style:none}
+::selection{background:var(--neon);color:#fff}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ═══════════════ TYPE ═══════════════ */
+h1,h2,h3,h4,.h-display,.h1,.h2,.h3{font-family:var(--head);font-weight:700;letter-spacing:-.05em;color:var(--navy)}
+.h-display{font-size:clamp(52px,7.6vw,132px);line-height:.94}
+.h1{font-size:clamp(44px,4.8vw,84px);line-height:.98}
+.h2{font-size:clamp(36px,3.8vw,64px);line-height:1.02}
+.h3{font-size:clamp(28px,2.2vw,36px);line-height:1.1}
+.lead{font-weight:500;font-size:clamp(18px,1.3vw,24px);line-height:1.4;letter-spacing:-.02em}
+.body-l{font-size:clamp(17px,1.1vw,20px);line-height:1.6}
+.muted{color:var(--muted)}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-weight:500;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:#8A90A0}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--neon);border-radius:2px}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.word{display:inline-block;overflow:hidden;vertical-align:top;padding:.1em .02em .26em;margin:-.1em -.02em -.26em}
+.word>span{display:inline-block;transform:translateY(140%);will-change:transform}
+
+/* ═══════════════ LAYOUT ═══════════════ */
+.wrap{padding-inline:var(--gutter);max-width:calc(var(--max) + 2*var(--gutter));margin-inline:auto}
+section{position:relative}
+.sec{padding-block:clamp(84px,9vw,160px)}
+.head{display:grid;grid-template-columns:1fr auto;gap:24px clamp(32px,6vw,120px);align-items:end;margin-bottom:clamp(36px,4vw,64px)}
+.head .l{display:flex;flex-direction:column;gap:18px}
+.head .r{max-width:44ch;color:var(--muted);font-size:clamp(15px,1.05vw,18px);display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+@media(max-width:900px){.head{grid-template-columns:1fr;align-items:start}}
+
+/* buttons */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;height:50px;padding:0 26px;border-radius:var(--r-full);font-weight:600;font-size:14px;line-height:1;white-space:nowrap;transition:transform .5s var(--ease),background .3s,color .3s,box-shadow .3s;will-change:transform}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+.btn-primary{background:var(--neon);color:#fff;box-shadow:0 8px 20px -8px rgba(0,111,255,.4),0 24px 60px -24px rgba(0,111,255,.45)}
+.btn-primary:hover{background:#0A5BE0}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:#15254a}
+.btn-white{background:#fff;color:var(--navy);box-shadow:var(--sh-card)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.5);color:#fff;backdrop-filter:blur(8px)}
+.btn-ghost:hover{background:rgba(255,255,255,.14)}
+.btn-lg{height:60px;padding:0 36px;font-size:15px}
+.btn .arr{width:16px;height:16px;transition:transform .5s var(--ease)}
+.btn:hover .arr{transform:translateX(4px)}
+.link{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;color:var(--neon)}
+.link svg{width:16px;height:16px;transition:transform .5s var(--ease)}
+.link:hover svg{transform:translateX(4px)}
+
+/* ═══════════════ CURSOR ═══════════════ */
+.cursor{position:fixed;left:0;top:0;z-index:10000;pointer-events:none;display:none}
+body.has-cursor .cursor{display:block}
+.cursor .dot{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--navy);transform:translate(-50%,-50%);transition:opacity .25s,background .3s}
+.cursor .ring{position:absolute;width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(28,47,91,.5);transform:translate(-50%,-50%);transition:width .4s var(--ease),height .4s var(--ease),background .3s,border-color .3s;display:grid;place-items:center}
+.cursor .ring span{font:600 10px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:0;transition:opacity .2s;white-space:nowrap}
+body.cur-dark .cursor .dot{background:#fff}
+body.cur-dark .cursor .ring{border-color:rgba(255,255,255,.6)}
+.cursor.is-link .ring{width:56px;height:56px;background:rgba(0,111,255,.12);border-color:var(--neon)}
+.cursor.is-label .ring{width:84px;height:84px;background:var(--neon);border-color:var(--neon)}
+.cursor.is-label .ring span{opacity:1}
+.cursor.is-label .dot,.cursor.is-link .dot{opacity:0}
+
+/* ═══════════════ LOADER ═══════════════ */
+/* ─── District.io flight (full-screen experience) ─── */
+.dio{position:fixed;inset:0;z-index:950;background:#05081A;color:#fff;user-select:none;-webkit-user-select:none;touch-action:none;opacity:0;visibility:hidden;transition:opacity .7s var(--ease),visibility 0s .7s}
+.dio.on{opacity:1;visibility:visible;transition:opacity .7s var(--ease)}
+.dio .stage{position:absolute;inset:0;overflow:hidden;background:#05081A}
+.dio .shot{position:absolute;inset:-6%;opacity:0;will-change:transform,opacity}
+.dio .shot img{width:100%;height:100%;object-fit:cover;display:block}
+.dio .vig{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(5,8,26,.55) 0%,rgba(5,8,26,0) 28%,rgba(5,8,26,0) 55%,rgba(5,8,26,.82) 100%)}
+.dio iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#05081A}
+.dio .hud{position:absolute;inset:0;pointer-events:none;z-index:2;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.dio .hud i{position:absolute;width:18px;height:18px;border:1.5px solid rgba(255,255,255,.35)}
+.dio .hud i:nth-child(1){top:22px;left:22px;border-right:0;border-bottom:0}.dio .hud i:nth-child(2){top:22px;right:22px;border-left:0;border-bottom:0}.dio .hud i:nth-child(3){bottom:22px;left:22px;border-right:0;border-top:0}.dio .hud i:nth-child(4){bottom:22px;right:22px;border-left:0;border-top:0}
+.dio .hud .alt{position:absolute;right:var(--gutter);top:50%;transform:translateY(-50%);text-align:right;display:grid;gap:6px}
+.dio .hud .alt b{display:block;font-weight:500;font-size:22px;letter-spacing:0;color:#fff;font-variant-numeric:tabular-nums}
+.dio .top{position:absolute;top:22px;left:var(--gutter);right:var(--gutter);display:flex;justify-content:space-between;align-items:center;z-index:3}
+.dio .brand-dio{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.85)}
+.dio .brand-dio em{font-style:normal;display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.dio .brand-dio em::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--cyan,#00FFD4);box-shadow:0 0 10px var(--cyan,#00FFD4)}
+.dio .top .r{display:flex;gap:10px;align-items:center}
+.dio .xbtn{width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:#fff;display:grid;place-items:center;cursor:pointer;transition:background .3s,transform .5s var(--ease)}
+.dio .xbtn:hover{background:rgba(255,255,255,.22);transform:rotate(90deg)}
+.dio .xbtn svg{width:18px;height:18px}
+.dio .cap{position:absolute;left:var(--gutter);right:var(--gutter);bottom:clamp(96px,13vh,150px);z-index:3;max-width:720px}
+.dio .cap .k{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:18px}
+.dio .cap .k::before{content:"";width:28px;height:1.5px;background:var(--cyan,#00FFD4)}
+.dio .cap h3{font-family:var(--head);font-weight:700;font-size:clamp(40px,5.6vw,84px);line-height:.96;letter-spacing:-.035em;color:#fff;overflow:hidden}
+.dio .cap h3 span{display:block}
+.dio .cap p{margin-top:16px;max-width:52ch;font-size:clamp(15px,1.1vw,18px);line-height:1.5;color:rgba(255,255,255,.78)}
+.dio .chapters{position:absolute;left:var(--gutter);right:var(--gutter);bottom:30px;display:flex;gap:8px;z-index:3}
+.dio .chapters button{flex:1;background:none;border:0;padding:10px 0 0;cursor:pointer;color:rgba(255,255,255,.55);font-family:var(--body);font-size:11px;letter-spacing:.04em;text-align:left;transition:color .3s}
+.dio .chapters button i{display:block;height:2px;border-radius:2px;background:rgba(255,255,255,.22);overflow:hidden;margin-bottom:10px}
+.dio .chapters button i::after{content:"";display:block;height:100%;background:#fff;transform:scaleX(var(--p,0));transform-origin:left}
+.dio .chapters button.on{color:#fff}
+.dio .chapters button:hover{color:#fff}
+.dio .hint{position:absolute;left:50%;bottom:92px;transform:translateX(-50%);z-index:3;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);pointer-events:none;transition:opacity .6s}
+.dio.moved .hint{opacity:0}
+.dio .enter{position:absolute;inset:0;z-index:4;display:grid;place-items:center;background:#05081A;transition:opacity .8s var(--ease),visibility 0s .8s}
+.dio .enter.off{opacity:0;visibility:hidden}
+.dio .enter .box{text-align:center;display:grid;gap:14px;justify-items:center}
+.dio .enter .box b{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.dio .enter .bar{width:min(50vw,320px);height:2px;background:rgba(255,255,255,.18);border-radius:2px;overflow:hidden}
+.dio .enter .bar i{display:block;height:100%;background:var(--cyan,#00FFD4);transform:scaleX(0);transform-origin:left;box-shadow:0 0 12px rgba(0,255,212,.7)}
+body.dio-open{overflow:hidden}
+.dio [hidden]{display:none!important}
+body.dio-open .nav,body.dio-open .topfade,body.dio-open .cursor{opacity:0!important;pointer-events:none}
+@media(max-width:900px){.dio .brand-dio>span{display:none}.dio .hud .alt{display:none}.dio .cap{bottom:112px}.dio .chapters button span{display:none}.dio .chapters button{padding-top:14px}.dio .hint{display:none}.dio .top .btn{display:none}}
+
+.loader{position:fixed;inset:0;z-index:9000;background:var(--neon);display:grid;place-items:center;overflow:hidden}
+.loader-logo{width:clamp(170px,18vw,250px)}
+.loader-logo path{opacity:0}
+.loader-line{position:absolute;left:50%;bottom:16%;width:min(60vw,420px);height:2px;background:rgba(255,255,255,.35);transform:translateX(-50%);border-radius:2px;overflow:hidden}
+.loader-line i{position:absolute;inset:0;background:#fff;box-shadow:0 0 10px rgba(255,255,255,.8),0 0 24px rgba(0,255,212,.5);transform-origin:left;transform:scaleX(0)}
+.loader-tag{position:absolute;left:50%;bottom:calc(16% + 20px);transform:translateX(-50%);font-family:var(--body);font-weight:500;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:rgba(255,255,255,.9);white-space:nowrap;text-shadow:0 0 12px rgba(255,255,255,.55),0 0 28px rgba(0,255,212,.35)}
+
+
+/* ═══════════════ TOP FADE (colour-neutral progressive blur behind the nav) ═══════════════ */
+.topfade{position:fixed;inset:0 0 auto 0;height:150px;z-index:890;pointer-events:none;opacity:0;transition:opacity .5s;
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 30%,rgba(0,0,0,.5) 65%,transparent 100%);
+  mask-image:linear-gradient(180deg,#000 0%,#000 30%,rgba(0,0,0,.5) 65%,transparent 100%)}
+.topfade::after{content:"";position:absolute;inset:0;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  -webkit-mask-image:linear-gradient(180deg,#000 35%,transparent 100%);mask-image:linear-gradient(180deg,#000 35%,transparent 100%)}
+.nav.ready~.topfade{opacity:1}
+body.menu-open .topfade{opacity:0}
+@media(max-width:900px){.topfade{height:120px}}
+
+/* ═══════════════ NAV: logo stays top-left; menu + actions collapse into a centred pill ═══════════════ */
+.nav{position:fixed;top:16px;left:16px;right:16px;height:64px;z-index:900;color:#fff;transform:translateY(-140%);transition:transform .9s var(--ease),color .45s}
+.nav.ready{transform:none}
+.nav .brand{grid-column:1;justify-self:start;display:block;height:26px;margin-left:10px;transition:margin .7s var(--ease)}
+.pill.compact .brand{margin-left:0}
+.pill.compact .brand img{filter:brightness(0) saturate(100%) invert(16%) sepia(30%) saturate(1600%) hue-rotate(196deg) brightness(92%) contrast(95%)}
+.nav .brand img{height:26px;width:auto;transition:filter .45s}
+.pill{position:absolute;top:0;left:0;right:0;height:64px;margin-inline:auto;display:grid;grid-template-columns:1fr auto 1fr;column-gap:0;align-items:center;border-radius:var(--r-full);border:1px solid transparent;
+  transition:border-color .5s,box-shadow .5s,padding .7s var(--ease),column-gap .7s var(--ease),height .7s var(--ease),top .7s var(--ease),color .45s}
+.pill::before{content:"";position:absolute;inset:0;border-radius:inherit;backdrop-filter:blur(40px) saturate(1.3);-webkit-backdrop-filter:blur(40px) saturate(1.3);background:rgba(10,14,41,.5);opacity:0;transition:opacity .5s,background .5s;z-index:-1}
+.pill .menu{grid-column:2}
+.pill.compact .menu{margin-left:0}
+.pill .right{grid-column:3;justify-self:end}
+.pill.compact{width:max-content;height:58px;top:3px;column-gap:14px;padding:0 7px 0 18px;color:var(--navy);border-color:rgba(28,47,91,.08);box-shadow:0 8px 24px -12px rgba(28,47,91,.12),0 30px 80px -30px rgba(28,47,91,.22)}
+.pill.compact::before{opacity:1;background:rgba(255,255,255,.8)}
+.glassbit{background:rgba(10,14,41,.42);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(30px) saturate(1.2);-webkit-backdrop-filter:blur(30px) saturate(1.2);transition:background .5s,border-color .5s,padding .7s var(--ease),gap .7s var(--ease)}
+.pill.compact .glassbit{background:transparent;border-color:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+.nav .menu{display:flex;align-items:center;gap:clamp(2px,.5vw,6px);height:52px;padding:0 6px;border-radius:var(--r-full)}
+.pill.compact .menu{padding:0;height:44px;gap:0}
+.mi{position:relative;height:100%;display:flex;align-items:center}
+.mi>a{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:14px;height:40px;padding:0 16px;border-radius:var(--r-full);transition:background .3s,color .3s,padding .7s var(--ease)}
+.pill.compact .mi>a{padding:0 13px}
+.mi>a svg{width:12px;height:12px;opacity:.8;transition:transform .4s var(--ease)}
+.mi:hover>a{background:#fff;color:var(--neon)}
+.pill.compact .mi:hover>a{background:rgba(28,47,91,.07);color:var(--navy)}
+.mi:hover>a svg{transform:rotate(180deg)}
+.dd{position:absolute;left:50%;top:calc(100% + 14px);transform:translate(-50%,-8px);width:min(640px,calc(100vw - 48px));background:#fff;color:var(--navy);border-radius:var(--r-xl);box-shadow:0 10px 30px -12px rgba(28,47,91,.12),0 50px 120px -40px rgba(28,47,91,.3),0 0 0 1px rgba(28,47,91,.06);padding:22px;display:grid;grid-template-columns:1fr 1fr 200px;gap:22px;opacity:0;pointer-events:none;transition:opacity .35s,transform .5s var(--ease)}
+.dd::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+.mi:hover .dd,.mi:focus-within .dd{opacity:1;pointer-events:auto;transform:translate(-50%,0)}
+.dd h5{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8A90A0;margin-bottom:10px}
+.dd a.item{display:block;padding:9px 10px;border-radius:10px;font-size:14px;font-weight:500;transition:background .25s,color .25s}
+.dd a.item small{display:block;font-weight:400;color:var(--muted);font-size:12px;margin-top:2px}
+.dd a.item:hover{background:#F2F6FF;color:var(--neon)}
+.dd .promo{border-radius:var(--r-lg);overflow:hidden;position:relative;color:#fff;display:flex;align-items:flex-end;padding:14px;min-height:170px;background:var(--navy)}
+.dd .promo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.75}
+.dd .promo b{position:relative;font-family:var(--head);font-weight:600;font-size:16px;letter-spacing:-.02em;line-height:1.1}
+.nav .right{display:flex;align-items:center;gap:10px;transition:gap .7s var(--ease)}
+.pill.compact .right{gap:4px}
+.nav .icon-btn{width:44px;height:44px;border-radius:50%;display:grid;place-items:center}
+.nav .icon-btn:hover{background:rgba(255,255,255,.2)}
+.pill.compact .icon-btn:hover{background:rgba(28,47,91,.08)}
+.nav .icon-btn svg{width:20px;height:20px}
+.nav .btn{height:44px;padding:0 22px;margin-left:4px}
+
+.nav .burger{display:none}
+@media(max-width:1080px){.nav .menu{display:none}.nav .btn{display:none}.nav .burger{display:grid}.pill.compact{margin-inline:auto 0}}
+
+.mnav{position:fixed;inset:0;z-index:850;background:var(--neon);color:#fff;padding:110px var(--gutter) 40px;display:flex;flex-direction:column;justify-content:space-between;clip-path:inset(0 0 100% 0);pointer-events:none;transition:clip-path .8s var(--ease)}
+.mnav.on{clip-path:inset(0 0 0 0);pointer-events:auto}
+.mnav a.big{font-family:var(--head);font-weight:700;font-size:clamp(40px,10vw,76px);letter-spacing:-.04em;line-height:1;display:block;padding:6px 0}
+.mnav .foot{display:flex;flex-direction:column;align-items:flex-start;gap:18px;color:rgba(255,255,255,.75);font-size:14px}
+body.menu-open .nav{color:#fff}
+body.menu-open .pill::before{opacity:0}
+body.menu-open .nav .brand img{filter:none}
+
+/* ═══════════════ HERO ═══════════════ */
+.hero{height:100svh;min-height:660px;padding:12px;position:relative}
+.hero-inner{position:relative;height:100%;border-radius:28px;overflow:hidden;background:var(--dark);isolation:isolate}
+.slide{position:absolute;inset:0;opacity:0;pointer-events:none}
+.slide.on{opacity:1;pointer-events:auto}
+.slide .media{position:absolute;inset:-8% 0;will-change:transform}
+.slide .media img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transform-origin:50% 40%}
+.slide .media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,14,41,.72) 0%,rgba(10,14,41,.25) 55%,rgba(10,14,41,.1) 100%),linear-gradient(180deg,rgba(10,14,41,.3) 0%,rgba(10,14,41,0) 30%,rgba(10,14,41,.75) 100%)}
+.mesh{position:absolute;inset:0;z-index:1;opacity:.5;mix-blend-mode:screen;pointer-events:none}
+.hero-copy{position:absolute;left:clamp(24px,4vw,72px);right:clamp(24px,4vw,72px);bottom:clamp(140px,18vh,200px);z-index:2;color:#fff;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:40px;align-items:end;pointer-events:none}
+.hero-copy .eyebrow{color:rgba(255,255,255,.8);margin-bottom:22px}
+.hero-copy h1{color:#fff;max-width:11ch}
+.hero-copy p{margin-top:24px;max-width:52ch;color:rgba(255,255,255,.86);font-size:clamp(16px,1.2vw,20px);line-height:1.55}
+.hero-copy .cta{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap;pointer-events:auto}
+.hero-chips{display:flex;flex-direction:column;gap:10px;align-items:flex-end;pointer-events:auto}
+.chip-g{display:flex;align-items:center;gap:14px;padding:12px 18px 12px 14px;border-radius:var(--r-lg);background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);min-width:230px;transform:translateX(30px);opacity:0}
+.chip-g b{font-family:var(--head);font-weight:700;font-size:26px;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.chip-g div>span{font-size:12px;color:rgba(255,255,255,.75);line-height:1.3}
+.chip-g i{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 4px rgba(0,255,212,.18)}
+.hero-nav{position:absolute;left:clamp(24px,4vw,72px);bottom:86px;z-index:3;display:flex;gap:8px;align-items:center}
+.hero-nav button{width:48px;height:4px;border-radius:4px;background:rgba(255,255,255,.3);overflow:hidden;position:relative;transition:width .4s var(--ease)}
+.hero-nav button i{position:absolute;inset:0;background:#fff;transform-origin:left;transform:scaleX(0)}
+.hero-nav button.on{width:84px}
+.hero-nav .n{margin-left:14px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:rgba(255,255,255,.7)}
+.hero-scroll{position:absolute;right:clamp(24px,4vw,72px);bottom:80px;z-index:3;color:rgba(255,255,255,.75);display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+.hero-scroll i{width:1px;height:44px;background:rgba(255,255,255,.3);position:relative;overflow:hidden}
+.hero-scroll i::after{content:"";position:absolute;inset:0;background:#fff;animation:drop 2.2s var(--ease-io) infinite}
+@keyframes drop{0%{transform:translateY(-100%)}60%,100%{transform:translateY(100%)}}
+@media(max-width:900px){.hero-copy{grid-template-columns:1fr;bottom:118px}.hero-copy .eyebrow{font-size:10.5px;letter-spacing:.22em;margin-bottom:16px}.hero-nav{bottom:82px}.hero-chips{display:none}.hero{padding:8px;min-height:600px}.hero-inner{border-radius:20px}.hero-scroll{display:none}}
+
+/* ═══════════════ LOGOS ═══════════════ */
+.logos{padding:clamp(48px,5vw,80px) 0 0;overflow:hidden;position:relative}
+.logos::before,.logos::after{content:"";position:absolute;top:0;bottom:0;width:14vw;z-index:2;pointer-events:none;background:linear-gradient(90deg,var(--page),transparent)}
+.logos::after{right:0;transform:scaleX(-1)}
+.logos .track{display:flex;gap:clamp(56px,7vw,120px);width:max-content;animation:marquee 40s linear infinite;align-items:center}
+.logos:hover .track{animation-play-state:paused}
+.logos .track img{height:32px;width:auto;filter:grayscale(1) brightness(.5) contrast(.9);opacity:.5;transition:filter .4s,opacity .4s}
+.logos .track img:hover{filter:none;opacity:1}
+.logos .track img.tall{height:42px}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+
+/* ═══════════════ PLANNER (Airbnb-style entry bar) ═══════════════ */
+.planner{padding:0 0 0}
+/* dock: the planner bar straddles the hero's bottom edge and slides in on scroll */
+.hero{z-index:3}
+.plan-dock{position:absolute;left:max(var(--gutter),calc(50% - var(--max)/2));right:max(var(--gutter),calc(50% - var(--max)/2));bottom:calc(12px - var(--dockH,84px)/2);z-index:6;will-change:transform}
+.planner{padding-top:calc(var(--dockH,84px)/2 + 12px)} /* bar overlaps the hero edge by dockH/2-12 → 24px gap to the card */
+
+.plan-bar{display:grid;grid-template-columns:repeat(5,1fr) auto;align-items:center;background:#fff;border-radius:var(--r-full);box-shadow:var(--sh-float);padding:8px;position:relative}
+.seg{display:flex;align-items:center;gap:14px;text-align:left;padding:12px 20px;border-radius:var(--r-full);position:relative;transition:background .3s,color .3s;min-height:68px}
+.seg+.seg::before{content:"";position:absolute;left:0;top:24%;height:52%;width:1px;background:rgba(28,47,91,.12);transition:opacity .3s}
+.seg .ic{width:40px;height:40px;border-radius:50%;background:#EEF4FF;color:var(--neon);display:grid;place-items:center;flex:none;transition:background .3s,color .3s}
+.seg .ic svg{width:20px;height:20px}
+.seg b{display:block;font-family:var(--head);font-weight:700;font-size:18px;letter-spacing:-.02em;line-height:1.1;color:var(--navy);transition:color .3s}
+.seg small{display:block;font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.3;transition:color .3s}
+.seg:hover{background:#F3F5F8}
+.seg.on{background:var(--navy)}
+.seg.on b{color:#fff}.seg.on small{color:rgba(255,255,255,.72)}.seg.on .ic{background:var(--neon);color:#fff}
+.seg.on::before,.seg.on+.seg::before{opacity:0}
+.plan-go{width:62px;height:62px;border-radius:50%;background:var(--neon);color:#fff;display:grid;place-items:center;margin-left:6px;box-shadow:0 8px 20px -8px rgba(0,111,255,.4),0 24px 60px -24px rgba(0,111,255,.45);transition:transform .5s var(--ease),background .3s}
+.plan-go:hover{background:#0A5BE0;transform:scale(1.06)}
+.plan-go svg{width:24px;height:24px}
+.plan-panel{margin-top:0;background:#fff;border-radius:var(--r-2xl);box-shadow:var(--sh-card);padding:clamp(12px,1.2vw,18px);display:grid;grid-template-columns:minmax(280px,.95fr) 1.25fr;gap:14px}
+.plan-stage{position:relative;border-radius:var(--r-xl);overflow:hidden;background:var(--dark);min-height:360px;isolation:isolate}
+.plan-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .7s var(--ease-io),transform 1.6s var(--ease)}
+.plan-stage img.on{opacity:1;transform:scale(1)}
+.plan-stage::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,41,0) 45%,rgba(10,14,41,.75));z-index:1}
+.plan-stage .cap{position:absolute;left:22px;right:22px;bottom:20px;z-index:2;color:#fff}
+.plan-stage .cap .k{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.75);display:block;margin-bottom:6px}
+.plan-stage .cap b{font-family:var(--head);font-weight:700;font-size:clamp(24px,2vw,34px);letter-spacing:-.03em;line-height:1.02;display:block}
+.plan-right{display:flex;flex-direction:column;gap:14px;min-width:0}
+.plan-title{font-family:var(--head);font-weight:700;font-size:clamp(24px,2.2vw,38px);letter-spacing:-.04em;line-height:1.04;color:var(--navy);padding:6px 8px 0;max-width:22ch}
+.plan-tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ptile{display:flex;flex-direction:column;gap:10px;padding:20px;border-radius:var(--r-xl);background:#F6F7F9;transition:background .3s,transform .5s var(--ease);min-height:168px}
+.ptile:hover{background:#EEF4FF;transform:translateY(-3px)}
+.ptile .ic{width:38px;height:38px;border-radius:12px;background:#fff;color:var(--neon);display:grid;place-items:center;box-shadow:var(--sh-card)}
+.ptile .ic svg{width:18px;height:18px}
+.ptile b{font-family:var(--head);font-weight:700;font-size:18px;letter-spacing:-.02em;line-height:1.1;color:var(--navy);margin-top:6px}
+.ptile span{font-size:13px;color:var(--muted);line-height:1.45}
+.ptile .lk{margin-top:auto;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--neon)}
+.ptile .lk svg{width:14px;height:14px;transition:transform .4s var(--ease)}
+.ptile:hover .lk svg{transform:translateX(3px)}
+@media(max-width:1100px){.plan-bar{display:flex;overflow-x:auto;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:4px;padding:6px}.plan-bar::-webkit-scrollbar{display:none}.seg{flex:none;scroll-snap-align:start;min-height:56px;padding:8px 16px 8px 10px;gap:10px}.seg+.seg::before{display:none}.seg .ic{width:34px;height:34px}.seg .ic svg{width:17px;height:17px}.seg b{font-size:16px}.seg small{font-size:11.5px}.plan-go{flex:none;width:52px;height:52px;margin-left:auto;position:sticky;right:0}.plan-panel{grid-template-columns:1fr}.plan-stage{min-height:0;aspect-ratio:16/9}}
+@media(max-width:700px){.seg small{display:none}.seg{min-height:50px;padding:6px 14px 6px 8px}.plan-go{width:46px;height:46px}.plan-tiles{grid-template-columns:1fr;gap:8px}.ptile{flex-direction:row;align-items:center;gap:14px;min-height:0;padding:14px 16px}.ptile .ic{flex:none}.ptile b{margin-top:0;font-size:16px}.ptile>span:not(.ic):not(.lk){display:none}.ptile .lk{margin-top:0;margin-left:auto;flex:none}.ptile .lk span{display:none}.plan-title{font-size:clamp(22px,6vw,28px);padding:4px 4px 0}}
+
+
+
+/* ═══════════════ BRAND PATTERN (DSO pattern system: staggered node rows, used subtly with edge fades) ═══════════════ */
+:root{--pat-navy:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22108%22 height=%2254%22 viewBox=%220 0 108 54%22%3E%3Cg fill=%22%231C2F5B%22 stroke=%22%231C2F5B%22%3E%3Cline x1=%220%22 y1=%2213.5%22 x2=%22108%22 y2=%2213.5%22 stroke-width=%223.6%22/%3E%3Cline x1=%220%22 y1=%2240.5%22 x2=%22108%22 y2=%2240.5%22 stroke-width=%223.6%22/%3E%3Cellipse cx=%2254%22 cy=%2213.5%22 rx=%2223%22 ry=%2210.5%22 stroke=%22none%22/%3E%3Cellipse cx=%220%22 cy=%2240.5%22 rx=%2223%22 ry=%2210.5%22 stroke=%22none%22/%3E%3Cellipse cx=%22108%22 cy=%2240.5%22 rx=%2223%22 ry=%2210.5%22 stroke=%22none%22/%3E%3C/g%3E%3C/svg%3E");--pat-white:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22108%22 height=%2254%22 viewBox=%220 0 108 54%22%3E%3Cg fill=%22%23FFFFFF%22 stroke=%22%23FFFFFF%22%3E%3Cline x1=%220%22 y1=%2213.5%22 x2=%22108%22 y2=%2213.5%22 stroke-width=%223.6%22/%3E%3Cline x1=%220%22 y1=%2240.5%22 x2=%22108%22 y2=%2240.5%22 stroke-width=%223.6%22/%3E%3Cellipse cx=%2254%22 cy=%2213.5%22 rx=%2223%22 ry=%2210.5%22 stroke=%22none%22/%3E%3Cellipse cx=%220%22 cy=%2240.5%22 rx=%2223%22 ry=%2210.5%22 stroke=%22none%22/%3E%3Cellipse cx=%22108%22 cy=%2240.5%22 rx=%2223%22 ry=%2210.5%22 stroke=%22none%22/%3E%3C/g%3E%3C/svg%3E")}
+.pat{position:relative;isolation:isolate;--pat-at:90% 50%;--pat-o:.06}
+.pat::before,.pat::after{content:"";position:absolute;inset:-40px;z-index:-1;pointer-events:none;background-image:var(--pat-white);background-size:100px 50px}
+/* sharp core: small, fades fast */
+.pat::before{opacity:var(--pat-o);-webkit-mask-image:radial-gradient(34% 52% at var(--pat-at),#000 0%,rgba(0,0,0,.5) 45%,transparent 100%);mask-image:radial-gradient(34% 52% at var(--pat-at),#000 0%,rgba(0,0,0,.5) 45%,transparent 100%)}
+/* blurred halo: larger, softer, dissolves outward */
+.pat::after{opacity:calc(var(--pat-o)*.8);filter:blur(5px);-webkit-mask-image:radial-gradient(58% 85% at var(--pat-at),transparent 0%,#000 35%,rgba(0,0,0,.4) 70%,transparent 100%);mask-image:radial-gradient(58% 85% at var(--pat-at),transparent 0%,#000 35%,rgba(0,0,0,.4) 70%,transparent 100%)}
+.pat-navy::before,.pat-navy::after{background-image:var(--pat-navy)}
+
+/* ═══════════════ STATEMENT ═══════════════ */
+.statement{padding:clamp(90px,10vw,170px) 0 clamp(40px,5vw,80px)}
+.statement p{font-family:var(--head);font-weight:600;letter-spacing:-.035em;line-height:1.08;font-size:clamp(30px,4.4vw,76px);max-width:22ch;color:var(--navy)}
+.statement p .w{opacity:.14}
+.statement p .w.hl{color:var(--neon)}
+.statement .tag{margin-bottom:28px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(48px,5vw,80px);border-top:1px solid rgba(28,47,91,.12)}
+.stat{padding:clamp(28px,2.6vw,44px) clamp(8px,1.5vw,28px) clamp(28px,2.6vw,44px) 0;display:flex;flex-direction:column;gap:10px;border-right:1px solid rgba(28,47,91,.12)}
+.stat:last-child{border-right:0}
+.stat+.stat{padding-left:clamp(20px,2.4vw,40px)}
+.stat b{font-family:var(--head);font-weight:700;font-size:clamp(44px,4.6vw,84px);letter-spacing:-.05em;line-height:.95;color:var(--navy);font-variant-numeric:tabular-nums}
+.stat b small{font-size:.42em;letter-spacing:-.02em;margin-left:.1em;color:var(--neon)}
+.stat>span{color:var(--muted);font-size:15px;max-width:26ch}
+.stat .mono{color:#A0A5B2}
+@media(max-width:700px){.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid rgba(28,47,91,.12);padding-left:0!important}.stat:last-child{border-bottom:0}}
+
+/* ═══════════════ SPLIT ═══════════════ */
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,80px);align-items:center}
+.split .copy{display:flex;flex-direction:column;gap:26px}
+.split .copy p{max-width:56ch;color:#2B2F3A;font-size:clamp(16px,1.15vw,20px)}
+.split .copy ul{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;margin-top:6px}
+.split .copy li{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#2B2F3A}
+.split .copy li::before{content:"";flex:none;width:18px;height:18px;border-radius:50%;background:#EAF2FF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23006FFF' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/10px no-repeat;margin-top:3px}
+.split .pic{border-radius:var(--r-2xl);overflow:hidden;aspect-ratio:4/5;position:relative;box-shadow:0 12px 30px -14px rgba(28,47,91,.12),0 60px 140px -50px rgba(28,47,91,.3)}
+.split .pic img{position:absolute;inset:-10% 0;width:100%;height:120%;object-fit:cover}
+.split .pic .tag{position:absolute;left:18px;bottom:18px;display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:var(--r-full);background:rgba(255,255,255,.85);backdrop-filter:blur(10px);color:var(--navy);font-size:12px;font-weight:600}
+.split .pic .tag i{width:8px;height:8px;border-radius:50%;background:var(--green)}
+@media(max-width:900px){.split{grid-template-columns:1fr}.split .pic{aspect-ratio:4/3}.split .copy ul{grid-template-columns:1fr}}
+
+/* ═══════════════ RAIL ═══════════════ */
+.rail{overflow:hidden}
+.rail .head{padding-inline:var(--gutter)}
+.rail-track{display:flex;gap:clamp(14px,1.4vw,24px);padding-inline:var(--gutter);width:max-content;will-change:transform}
+.rcard{position:relative;flex:none;width:clamp(300px,34vw,520px);height:clamp(420px,66vh,640px);border-radius:var(--r-2xl);overflow:hidden;background:var(--dark);color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(24px,2vw,36px);isolation:isolate}
+.rcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.2s var(--ease)}
+.rcard::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,14,41,0) 40%,rgba(10,14,41,.5) 70%,rgba(13,42,92,.95) 100%)}
+.rcard:hover img{transform:scale(1.05)}
+.rcard .no{position:absolute;top:clamp(20px,2vw,30px);left:clamp(24px,2vw,36px);font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:rgba(255,255,255,.75)}
+.rcard .go{position:absolute;top:clamp(18px,1.6vw,26px);right:clamp(18px,1.6vw,26px);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.14);backdrop-filter:blur(10px);display:grid;place-items:center;transition:background .3s,transform .5s var(--ease)}
+.rcard:hover .go{background:var(--neon);transform:rotate(45deg)}
+.rcard .go svg{width:18px;height:18px}
+.rcard h3{font-size:clamp(28px,2.4vw,42px);letter-spacing:-.04em;line-height:1;color:#fff}
+.rcard p{margin-top:12px;font-size:14px;line-height:1.55;color:rgba(255,255,255,.86);max-width:36ch}
+.rcard .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px}
+.rcard .tags span{font-size:11px;font-weight:600;letter-spacing:.04em;padding:6px 10px;border-radius:var(--r-full);background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18)}
+.rail .pbar{margin:28px var(--gutter) 0;height:2px;background:rgba(28,47,91,.1);border-radius:2px;position:relative}
+.rail .pbar i{position:absolute;inset:0;background:var(--neon);transform-origin:left;transform:scaleX(0)}
+@media(max-width:900px){.rail-track{overflow-x:auto;width:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:8px;scrollbar-width:none}.rail-track::-webkit-scrollbar{display:none}.rcard{scroll-snap-align:start;width:78vw;height:68vh}.rail .pbar{display:none}}
+
+/* ═══════════════ INDUSTRIES ═══════════════ */
+.ind{display:grid;grid-template-columns:1fr minmax(320px,.78fr);gap:clamp(24px,5vw,100px);align-items:start}
+.ind-list{display:flex;flex-direction:column;border-top:1px solid rgba(28,47,91,.14)}
+.ind-row{display:grid;grid-template-columns:56px 1fr auto;gap:18px;align-items:center;padding:clamp(18px,1.8vw,28px) 0;border-bottom:1px solid rgba(28,47,91,.14);position:relative}
+.ind-row .no{font-family:var(--mono);font-size:12px;color:#A0A5B2;letter-spacing:.1em}
+.ind-row h3{font-size:clamp(24px,2.3vw,40px);letter-spacing:-.04em;line-height:1;transition:transform .5s var(--ease),color .3s}
+.ind-row p{font-size:14px;color:var(--muted);max-width:52ch;margin-top:6px;max-height:0;opacity:0;overflow:hidden;transition:max-height .6s var(--ease),opacity .4s}
+.ind-row .arr{width:44px;height:44px;border-radius:50%;border:1px solid rgba(28,47,91,.18);display:grid;place-items:center;transition:background .3s,border-color .3s,transform .5s var(--ease)}
+.ind-row .arr svg{width:18px;height:18px}
+.ind-row.on h3,.ind-row:hover h3{color:var(--neon);transform:translateX(8px)}
+.ind-row.on p,.ind-row:hover p{max-height:80px;opacity:1}
+.ind-row.on .arr,.ind-row:hover .arr{background:var(--neon);border-color:var(--neon);color:#fff;transform:rotate(-45deg)}
+.ind-row .thumb{display:none}
+.ind-stage{position:sticky;top:110px;aspect-ratio:4/5;border-radius:var(--r-2xl);overflow:hidden;background:var(--dark);isolation:isolate}
+.ind-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .7s var(--ease-io),transform 1.4s var(--ease)}
+.ind-stage img.on{opacity:1;transform:scale(1)}
+.ind-stage .cap{position:absolute;left:22px;bottom:22px;right:22px;color:#fff;display:flex;justify-content:space-between;align-items:flex-end;z-index:2;text-shadow:0 2px 20px rgba(0,0,0,.4)}
+.ind-stage .cap b{font-family:var(--head);font-size:clamp(22px,1.8vw,30px);letter-spacing:-.03em;line-height:1}
+.ind-stage .cap span{font-family:var(--mono);font-size:11px;letter-spacing:.2em}
+.ind-stage::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,14,41,.7));z-index:1}
+@media(max-width:900px){.ind{grid-template-columns:1fr}.ind-stage{display:none}.ind-row{grid-template-columns:56px 1fr auto;gap:14px;padding:14px 0}.ind-row .no{display:none}.ind-row .thumb{display:block;width:56px;height:66px;border-radius:12px;object-fit:cover}.ind-row p{display:none}.ind-row h3{font-size:22px}.ind-row.on h3,.ind-row:hover h3{transform:none}.ind-row .arr{width:38px;height:38px}}
+
+/* ═══════════════ WHY ═══════════════ */
+.why{padding:clamp(70px,9vw,150px) 0 clamp(30px,4vw,70px)}
+.wm{position:absolute;left:0;right:0;top:0;text-align:center;font-family:var(--head);font-weight:700;font-size:clamp(90px,17vw,300px);letter-spacing:-.05em;line-height:1;color:transparent;background:linear-gradient(180deg,rgba(28,47,91,.12),rgba(28,47,91,0));-webkit-background-clip:text;background-clip:text;pointer-events:none;user-select:none;white-space:nowrap}
+.why .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.4vw,24px);position:relative;z-index:1;margin-top:clamp(70px,8vw,150px)}
+.wcard{background:#fff;border-radius:var(--r-2xl);padding:clamp(26px,2.2vw,36px) clamp(22px,1.8vw,30px) clamp(30px,2.6vw,44px);box-shadow:0 6px 18px -8px rgba(28,47,91,.07),0 40px 100px -40px rgba(28,47,91,.22);min-height:300px;display:flex;flex-direction:column;gap:18px;transition:transform .6s var(--ease),box-shadow .6s;position:relative;overflow:hidden}
+.wcard::before{content:"";position:absolute;inset:0;background:radial-gradient(360px circle at var(--mx,50%) var(--my,50%),rgba(0,111,255,.1),transparent 60%);opacity:0;transition:opacity .4s;pointer-events:none}
+.wcard:hover::before{opacity:1}
+.wcard:hover{transform:translateY(-8px);box-shadow:0 10px 24px -10px rgba(28,47,91,.1),0 50px 110px -40px rgba(28,47,91,.3)}
+.wcard h3{font-size:clamp(24px,1.75vw,32px);line-height:1.08;letter-spacing:-.03em}
+.wcard p{color:var(--muted);font-size:clamp(15px,1.05vw,18px);line-height:1.5}
+.wcard .ic{width:46px;height:46px;border-radius:14px;background:#EEF4FF;display:grid;place-items:center;color:var(--neon)}
+.wcard .ic svg{width:22px;height:22px}
+.wcard .link{margin-top:auto}
+@media(max-width:1100px){.why .grid4{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.why .grid4{grid-template-columns:1fr;margin-top:clamp(50px,14vw,90px)}.wcard{min-height:0;gap:12px;padding:22px 20px 24px}.wcard h3 br{display:none}.why{padding-top:40px}}
+
+/* ═══════════════ LIFE ═══════════════ */
+.life{padding-top:clamp(70px,8vw,130px)}
+.life .wm{top:clamp(150px,15vw,290px)}
+.tabs{position:relative;z-index:1;background:#fff;border-radius:var(--r-2xl);box-shadow:0 8px 20px -10px rgba(28,47,91,.08),0 50px 120px -46px rgba(28,47,91,.26);display:grid;grid-template-columns:minmax(240px,.38fr) 1fr;gap:clamp(24px,4vw,70px);padding:clamp(24px,2.6vw,48px)}
+.tabs nav{display:flex;flex-direction:column;gap:6px}
+.tabs nav button{text-align:left;padding:16px 22px;border-radius:var(--r-lg);font-size:clamp(16px,1.1vw,19px);line-height:1.3;color:#111;transition:background .3s;position:relative;display:flex;align-items:center;gap:14px}
+.tabs nav button .k{font-family:var(--mono);font-size:11px;color:#A0A5B2;letter-spacing:.1em}
+.tabs nav button b{display:block;font-weight:600}
+.tabs nav button::before{content:"";position:absolute;left:0;top:50%;height:0;width:3px;border-radius:3px;background:var(--neon);transform:translateY(-50%);transition:height .4s var(--ease)}
+.tabs nav button:hover{background:#F6F7F9}
+.tabs nav button.on{background:#F3F5F8}
+.tabs nav button.on::before{height:52%}
+.tabs .panel{display:none;grid-template-columns:1fr minmax(200px,.6fr);gap:clamp(20px,3vw,48px);align-items:center}
+.tabs .panel.on{display:grid}
+.tabs .panel .tx{display:flex;flex-direction:column;gap:20px}
+.tabs .panel h3{font-size:clamp(28px,2.6vw,46px);letter-spacing:-.04em;line-height:1.02}
+.tabs .panel h3 b{color:var(--neon)}
+.tabs .panel p{font-size:clamp(15px,1.1vw,19px);color:#2B2F3A;max-width:60ch}
+.tabs .panel .pts{display:flex;flex-wrap:wrap;gap:8px}
+.tabs .panel .pts span{padding:8px 14px;border-radius:var(--r-full);background:#EEF4FF;color:var(--navy);font-size:13px;font-weight:500}
+.tabs .panel .pic{aspect-ratio:4/5;border-radius:var(--r-xl);overflow:hidden}
+.tabs .panel .pic img{width:100%;height:100%;object-fit:cover}
+@media(max-width:1000px){.tabs .panel{grid-template-columns:1fr}.tabs .panel .pic{aspect-ratio:16/10}}
+@media(max-width:800px){.tabs{grid-template-columns:1fr}}
+
+/* ═══════════════ BENTO ═══════════════ */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(220px,22vw,320px);gap:clamp(14px,1.4vw,24px)}
+.bcard{position:relative;border-radius:var(--r-2xl);overflow:hidden;background:var(--dark);color:#fff;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(20px,1.8vw,30px)}
+.bcard.big{grid-column:span 2;grid-row:span 2}
+.bcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.2s var(--ease)}
+.bcard::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,14,41,0) 40%,rgba(13,42,92,.9) 100%)}
+.bcard:hover img{transform:scale(1.05)}
+.bcard h3{font-size:clamp(20px,1.6vw,28px);letter-spacing:-.03em;line-height:1.05;color:#fff}
+.bcard.big h3{font-size:clamp(30px,2.8vw,48px)}
+.bcard p{font-size:13.5px;color:rgba(255,255,255,.86);margin-top:8px;max-width:40ch;max-height:0;opacity:0;overflow:hidden;transition:max-height .6s var(--ease),opacity .4s}
+.bcard.big p{max-height:none;opacity:1;font-size:15px}
+.bcard:hover p{max-height:80px;opacity:1}
+.bcard .k{position:absolute;top:18px;left:20px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:rgba(255,255,255,.8)}
+@media(max-width:900px){.bento{grid-template-columns:1fr 1fr;grid-auto-rows:220px}.bcard.big{grid-column:span 2}}
+@media(max-width:560px){.bento{grid-template-columns:1fr;grid-auto-rows:auto}.bcard{min-height:230px;aspect-ratio:16/10}.bcard.big{grid-column:span 1;grid-row:span 1;min-height:0;aspect-ratio:4/3}.bcard p{max-height:none;opacity:1}}
+
+/* ═══════════════ GALLERY ═══════════════ */
+.imagine{overflow:hidden}
+.gal{position:relative}
+.gal .track{display:flex;gap:clamp(14px,1.2vw,24px);width:max-content;padding-inline:var(--gutter);will-change:transform}
+.gal .track img{height:clamp(300px,56vh,640px);width:auto;border-radius:var(--r-2xl);object-fit:cover;flex:none}
+.gal .track img.sq{aspect-ratio:1/1}
+.gal .track img.wide{aspect-ratio:16/10}
+.gal .track img.portrait{aspect-ratio:3/4}
+.gal .track .col{display:flex;flex-direction:column;gap:clamp(14px,1.2vw,24px)}
+.gal .track .col img{height:calc((clamp(300px,56vh,640px) - clamp(14px,1.2vw,24px))/2);aspect-ratio:4/3}
+.gal .ctrl{position:absolute;top:50%;transform:translateY(-50%);width:64px;height:64px;border-radius:50%;background:var(--neon);color:#fff;display:grid;place-items:center;z-index:3;box-shadow:var(--sh-float);transition:transform .5s var(--ease),background .3s}
+.gal .ctrl.prev{left:clamp(16px,2.5vw,48px)}
+.gal .ctrl.next{right:clamp(16px,2.5vw,48px);background:#fff;color:var(--neon)}
+.gal .ctrl svg{width:22px;height:22px}
+.gal .bar{margin:28px var(--gutter) 0;height:2px;background:rgba(28,47,91,.1);border-radius:2px;position:relative}
+.gal .bar i{position:absolute;inset:0;background:var(--neon);transform-origin:left;transform:scaleX(0)}
+@media(max-width:700px){.gal .ctrl{display:none}}
+
+/* ═══════════════ FACILITIES ═══════════════ */
+.fac{display:grid;grid-template-columns:minmax(320px,.9fr) 1fr;gap:clamp(24px,6vw,120px);align-items:start}
+.fac-stage{position:sticky;top:110px;aspect-ratio:4/5;border-radius:var(--r-2xl);overflow:hidden;background:var(--dark)}
+.fac-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .7s var(--ease-io),transform 1.4s var(--ease)}
+.fac-stage img.on{opacity:1;transform:scale(1)}
+.fac-stage .k{position:absolute;left:22px;top:22px;z-index:2;font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:#fff;background:rgba(10,14,41,.5);backdrop-filter:blur(8px);padding:8px 12px;border-radius:var(--r-full)}
+.fac-list{display:flex;flex-direction:column}
+.frow{padding:clamp(28px,3vw,52px) 0;border-bottom:1px solid rgba(28,47,91,.14);display:grid;gap:14px;transition:opacity .4s}
+.frow:first-child{padding-top:0}
+.frow .no{font-family:var(--mono);font-size:12px;color:#A0A5B2;letter-spacing:.1em}
+.frow h3{font-size:clamp(28px,2.6vw,46px);letter-spacing:-.04em;line-height:1;transition:color .3s}
+.frow p{color:var(--muted);font-size:clamp(15px,1.05vw,18px);max-width:52ch}
+.frow .meta{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--navy);font-weight:500}
+.frow .meta span::before{content:"— ";color:var(--neon)}
+.frow .thumb{display:none}
+.frow.on h3{color:var(--neon)}
+.fac-list .frow:not(.on){opacity:.5}
+@media(max-width:900px){.fac{grid-template-columns:1fr}.fac-stage{display:none}.frow .thumb{display:block;width:100%;aspect-ratio:16/9;border-radius:var(--r-xl);object-fit:cover}.fac-list .frow:not(.on){opacity:1}}
+
+/* ═══════════════ TRUSTED ═══════════════ */
+.trusted{display:grid;grid-template-columns:1fr minmax(260px,.3fr);gap:clamp(16px,2vw,36px);align-items:stretch}
+.trusted .blue{background:var(--neon);color:#fff;border-radius:var(--r-2xl);padding:clamp(32px,4vw,72px);display:flex;flex-direction:column;justify-content:center;gap:22px;position:relative;overflow:hidden}
+.trusted .blue::after{content:"";position:absolute;right:-20%;top:-60%;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.22),transparent 60%);pointer-events:none}
+.trusted .blue h2{color:#fff}
+.trusted .blue p{font-size:clamp(16px,1.15vw,20px);max-width:52ch;color:rgba(255,255,255,.92)}
+.trusted .blue .row{display:flex;gap:clamp(24px,3vw,56px);flex-wrap:wrap;margin-top:8px}
+.trusted .blue .row b{display:block;font-family:var(--head);font-size:clamp(30px,2.6vw,44px);letter-spacing:-.04em;line-height:1}
+.trusted .blue .row div>span{font-size:13px;opacity:.85}
+.trusted .pic{border-radius:var(--r-2xl);overflow:hidden;min-height:320px;position:relative}
+.trusted .pic img{position:absolute;inset:-10% 0;width:100%;height:120%;object-fit:cover}
+@media(max-width:900px){.trusted{grid-template-columns:1fr}}
+
+/* ═══════════════ NEWS ═══════════════ */
+.news-grid{display:grid;grid-template-columns:1.7fr 1fr;gap:clamp(16px,2.6vw,48px);align-items:stretch}
+.feature{background:#fff;border-radius:var(--r-2xl);overflow:hidden;box-shadow:var(--sh-card);display:flex;flex-direction:column}
+.feature .pic{aspect-ratio:16/10;overflow:hidden}
+.feature .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.feature:hover .pic img{transform:scale(1.04)}
+.feature .body{padding:clamp(22px,2.2vw,40px);display:flex;flex-direction:column;gap:14px}
+.chip{display:inline-flex;align-items:center;height:36px;padding:0 16px;border-radius:var(--r-full);background:#EAF2FF;color:var(--neon);font-weight:600;font-size:13px}
+.feature .meta{display:flex;justify-content:space-between;align-items:center;color:#9AA0AE;font-size:14px}
+.feature h3{font-family:var(--body);font-weight:600;font-size:clamp(22px,2vw,34px);letter-spacing:-.02em;line-height:1.2;color:var(--ink)}
+.feature p{color:#4B5563;font-size:clamp(15px,1.05vw,17px)}
+.nlist{display:flex;flex-direction:column;gap:clamp(10px,1vw,18px)}
+.nitem{display:grid;grid-template-columns:clamp(96px,8vw,140px) 1fr;gap:clamp(14px,1.4vw,24px);background:#fff;border-radius:var(--r-xl);padding:clamp(12px,1.1vw,18px);box-shadow:var(--sh-card);align-items:center;transition:transform .5s var(--ease),box-shadow .5s}
+.nitem:hover{transform:translateX(6px);box-shadow:var(--sh-float)}
+.nitem .pic{aspect-ratio:1/1;border-radius:var(--r-lg);overflow:hidden}
+.nitem .pic img{width:100%;height:100%;object-fit:cover}
+.nitem .top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px}
+.nitem .top .chip{height:28px;padding:0 12px;font-size:11px}
+.nitem .top time{color:#9AA0AE;font-size:12px;white-space:nowrap}
+.nitem h4{font-family:var(--body);font-weight:600;font-size:clamp(15px,1.15vw,20px);letter-spacing:-.01em;line-height:1.25;color:var(--ink)}
+@media(max-width:900px){.news-grid{grid-template-columns:1fr}}
+
+/* ═══════════════ ENQUIRE ═══════════════ */
+.enq{background:var(--neon);color:#fff;border-radius:var(--r-2xl);display:grid;grid-template-columns:minmax(300px,.76fr) 1fr;gap:clamp(24px,4vw,80px);padding:clamp(24px,3vw,48px);position:relative;overflow:hidden;box-shadow:0 30px 70px -30px rgba(0,111,255,.35),0 80px 160px -60px rgba(0,111,255,.3)}
+.enq .copy{display:flex;flex-direction:column;gap:20px;justify-content:center;padding:clamp(8px,2vw,36px) 0 clamp(8px,2vw,36px) clamp(0px,2vw,36px);position:relative}
+.enq h2{color:#fff}
+.enq .copy>p{font-size:clamp(15px,1.1vw,18px);max-width:46ch;color:rgba(255,255,255,.92)}
+.opts{display:flex;flex-direction:column;gap:12px;margin-top:6px}
+.opt{display:flex;align-items:center;gap:14px;height:68px;padding:0 24px;background:#fff;color:#1F2937;border-radius:var(--r-lg);font-size:16px;font-weight:500;transition:transform .5s var(--ease),box-shadow .4s}
+.opt svg.ic{width:22px;height:22px;color:var(--navy)}
+.opt svg.arr{margin-left:auto;width:22px;height:22px;color:var(--navy);transition:transform .5s var(--ease)}
+.opt:hover{transform:translateX(6px);box-shadow:var(--sh-float)}
+.opt:hover svg.arr{transform:translateX(5px)}
+.enq .pic{border-radius:var(--r-xl);overflow:hidden;min-height:420px;position:relative}
+.enq .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.form{display:none;flex-direction:column;gap:12px;margin-top:6px}
+.form.on{display:flex}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form input,.form textarea{width:100%;background:#fff;color:#111;border-radius:var(--r-lg);height:54px;padding:0 18px;font-size:15px;border:2px solid transparent;transition:border-color .3s}
+.form textarea{height:116px;padding:14px 18px;resize:vertical}
+.form input:focus,.form textarea:focus{outline:0;border-color:var(--sky)}
+.form input::placeholder,.form textarea::placeholder{color:#6B7280}
+.form .foot{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:4px}
+.form .back{color:rgba(255,255,255,.85);font-size:14px;text-decoration:underline;text-underline-offset:4px}
+.form .btn-white{height:54px;padding:0 30px}
+.form .ok{display:none;background:#fff;color:var(--navy);border-radius:var(--r-lg);padding:22px 24px;font-size:16px;line-height:1.5}
+.form .ok b{display:block;font-family:var(--head);font-size:24px;letter-spacing:-.03em;margin-bottom:6px}
+@media(max-width:900px){.enq{grid-template-columns:1fr}.enq .pic{min-height:280px;order:-1}.form .row{grid-template-columns:1fr}}
+
+/* ═══════════════ FAQ ═══════════════ */
+.faq-grid{display:grid;grid-template-columns:minmax(300px,.8fr) 1fr;gap:clamp(32px,6vw,120px);align-items:start}
+.faq-left{display:flex;flex-direction:column;gap:24px;position:sticky;top:110px}
+.faq-left .pic{border-radius:var(--r-2xl);overflow:hidden;aspect-ratio:4/3;margin-top:16px}
+.faq-left .pic img{width:100%;height:100%;object-fit:cover}
+.acc{display:flex;flex-direction:column;gap:12px}
+.acc details{background:#fff;border-radius:var(--r-xl);box-shadow:var(--sh-card);overflow:hidden;transition:box-shadow .4s}
+.acc details[open]{box-shadow:var(--sh-float)}
+.acc summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:clamp(18px,1.5vw,26px);font-size:clamp(16px,1.15vw,21px);font-weight:500;color:var(--ink);line-height:1.35}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary i{flex:none;width:36px;height:36px;border-radius:50%;background:var(--neon);display:grid;place-items:center;transition:transform .5s var(--ease),background .3s;position:relative}
+.acc summary i::before,.acc summary i::after{content:"";position:absolute;width:14px;height:2px;background:#fff;border-radius:2px}
+.acc summary i::after{transform:rotate(90deg)}
+.acc details[open] summary i{background:var(--navy);transform:rotate(45deg)}
+.acc .a{padding:0 clamp(18px,1.5vw,26px) clamp(18px,1.5vw,26px);color:#6B7280;font-size:clamp(15px,1.02vw,17px);line-height:1.6;max-width:70ch}
+@media(max-width:900px){.faq-grid{grid-template-columns:1fr}.faq-left{position:static}}
+
+/* ═══════════════ FINAL ═══════════════ */
+.final{padding:0 12px 12px}
+.final-inner{position:relative;border-radius:28px;overflow:hidden;min-height:min(92vh,880px);display:grid;place-items:center;isolation:isolate;background:var(--dark)}
+.final-inner .bg{position:absolute;inset:-10% 0;z-index:-2}
+.final-inner .bg img{width:100%;height:100%;object-fit:cover}
+.final-inner .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,41,.35),rgba(10,14,41,.6))}
+.glass{width:min(1560px,calc(100% - 2*clamp(16px,5vw,90px)));margin:clamp(60px,8vw,120px) 0;padding:clamp(44px,7vw,120px) clamp(20px,5vw,80px);border-radius:28px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);backdrop-filter:blur(22px) saturate(1.2);-webkit-backdrop-filter:blur(22px) saturate(1.2);text-align:center;color:#fff;display:flex;flex-direction:column;align-items:center;gap:30px;box-shadow:0 20px 50px -24px rgba(0,0,0,.25),0 70px 160px -50px rgba(0,0,0,.35)}
+.glass h2{color:#fff;font-size:clamp(42px,7vw,128px);line-height:.96;max-width:14ch}
+.glass .cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+
+/* ═══════════════ FOOTER ═══════════════ */
+footer.site{background:var(--neon);color:#fff;padding:clamp(60px,7vw,120px) 0 0;overflow:hidden}
+footer .top{display:grid;grid-template-columns:1fr;gap:24px;max-width:700px}
+footer .top img{height:30px;width:auto}
+footer .top h2{color:#fff}
+footer .top p{color:rgba(255,255,255,.8);font-size:clamp(15px,1.1vw,18px)}
+footer .top .cta{display:flex;gap:12px;flex-wrap:wrap}
+footer .btn-white{height:56px;padding:0 32px;font-size:15px}
+footer .btn-white img{width:22px;height:22px}
+footer .cols{display:grid;grid-template-columns:repeat(5,auto);gap:36px clamp(28px,5vw,90px);margin-top:clamp(48px,5vw,80px);justify-content:start}
+footer .cols h4{font-family:var(--head);font-weight:600;font-size:17px;margin-bottom:16px;color:#fff}
+footer .cols li{margin-bottom:9px}
+footer .cols a{font-size:14.5px;color:rgba(255,255,255,.86);transition:color .3s}
+footer .cols a:hover{color:var(--cyan)}
+footer .bottom{margin-top:clamp(48px,6vw,100px);padding:26px 0;border-top:1px solid rgba(255,255,255,.15);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer .soc{display:flex;gap:24px}
+footer .soc a{width:28px;height:28px;display:grid;place-items:center;transition:transform .4s var(--ease)}
+footer .soc a:hover{transform:translateY(-3px)}
+footer .soc img{width:24px;height:24px}
+footer .legal{display:flex;gap:18px;align-items:center;flex-wrap:wrap;font-size:14px;color:rgba(255,255,255,.85)}
+footer .legal small{font-size:12px;color:rgba(255,255,255,.65)}
+footer .member{display:inline-flex;align-items:center;gap:10px;padding-left:18px;border-left:1px solid rgba(255,255,255,.25)}
+footer .member img{height:52px;width:auto;opacity:.95;transition:opacity .3s}
+footer .member:hover img{opacity:1}
+footer .giant{font-family:var(--head);font-weight:700;font-size:clamp(60px,12.6vw,232px);letter-spacing:-.05em;line-height:.8;white-space:nowrap;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.3);text-align:center;margin-top:10px;transform:translateY(12%);user-select:none}
+@media(max-width:1000px){footer .cols{grid-template-columns:repeat(3,auto)}}
+@media(max-width:600px){footer .cols{grid-template-columns:repeat(2,auto)}}
+
+/* ═══════════════ REVEAL ═══════════════ */
+[data-reveal]{opacity:0;transform:translateY(34px);will-change:transform,opacity}
+[data-reveal].in{opacity:1;transform:none;transition:opacity 1s var(--ease),transform 1.2s var(--ease)}
+@media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none}.word>span{transform:none}.slide .media img{transform:none}.chip-g{opacity:1;transform:none}.statement p .w{opacity:1}}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor" aria-hidden="true"><div class="ring"><span id="curLabel">View</span></div><div class="dot"></div></div>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <svg class="loader-logo" id="loaderLogo" viewBox="0 0 260 126" aria-hidden="true"></svg>
+  <div class="loader-tag">Dubai Silicon Oasis · Est. 2004</div>
+  <div class="loader-line"><i></i></div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="pill" id="pill">
+  <a class="brand" href="#top" aria-label="Dubai Silicon Oasis — home"><img src="assets/logos/dso-wordmark.svg?v=1792930961" alt="Dubai Silicon Oasis"></a>
+  <nav class="menu glassbit" aria-label="Primary">
+    <div class="mi"><a href="#business">Business <svg viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div class="dd"><div><h5>Set up</h5><a class="item" href="#enquire">Setup a new business<small>Licences, visas, office in one window</small></a><a class="item" href="#business">Business types<small>Startups to multinationals</small></a><a class="item" href="#life">Benefits<small>Ownership, tax, markets</small></a></div><div><h5>Operate</h5><a class="item" href="#facilities">Property portfolio</a><a class="item" href="#business">Services &amp; support</a><a class="item" href="#enquire">Member portal</a></div><a class="promo" href="#enquire"><img src="assets/img/fac-offices.jpg?v=1792930961" alt=""><b>Start your licence today →</b></a></div></div>
+    <div class="mi"><a href="#industries">Industries <svg viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div class="dd"><div><h5>Clusters</h5><a class="item" href="#industries">AI &amp; Quantum</a><a class="item" href="#industries">Robotics &amp; Automation</a><a class="item" href="#industries">Fintech &amp; Web3</a><a class="item" href="#industries">Drones &amp; UAS</a></div><div><h5>Initiatives</h5><a class="item" href="#initiatives">Advanced manufacturing</a><a class="item" href="#initiatives">Clean tech</a><a class="item" href="#initiatives">Mobility &amp; autonomous</a><a class="item" href="#initiatives">ICT &amp; infrastructure</a></div><a class="promo" href="#industries"><img src="assets/img/ind-robotics.jpg?v=1792930961" alt=""><b>11 industry clusters →</b></a></div></div>
+    <div class="mi"><a href="#initiatives">Ecosystem <svg viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div class="dd"><div><h5>Grow</h5><a class="item" href="#business">Dtec<small>Accelerators &amp; incubators</small></a><a class="item" href="#business">Oraseya Capital<small>Venture capital</small></a><a class="item" href="#why">Research &amp; development</a></div><div><h5>Learn</h5><a class="item" href="#why">RIT Dubai</a><a class="item" href="#news">Event calendar</a><a class="item" href="#news">Newsroom</a></div><a class="promo" href="#district" data-dio data-cur="Fly"><img src="assets/img/fly-03.jpg?v=1792930961" alt=""><b><small style="display:block;font:500 10px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;opacity:.8;margin-bottom:8px">District.io · 3D</small>Fly through the city →</b></a></div></div>
+    <div class="mi"><a href="#life">Living <svg viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div class="dd"><div><h5>Live</h5><a class="item" href="#life">Residential spaces</a><a class="item" href="#life">Short stay</a><a class="item" href="#life">Residents support</a></div><div><h5>Explore</h5><a class="item" href="#life">Life at DSO</a><a class="item" href="#imagine">The 15-minute city</a><a class="item" href="#facilities">Retail &amp; dining</a></div><a class="promo" href="#life"><img src="assets/img/dio-12.jpg?v=1792930961" alt=""><b>A city, not a zone →</b></a></div></div>
+    <div class="mi"><a href="#zone">About <svg viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div class="dd"><div><h5>DSO</h5><a class="item" href="#zone">About the city</a><a class="item" href="#zone">Masterplan 2040</a><a class="item" href="#zone">Leadership</a></div><div><h5>More</h5><a class="item" href="#news">Newsroom</a><a class="item" href="#zone">Sustainability</a><a class="item" href="#contact">Careers</a></div><a class="promo" href="#zone"><img src="assets/img/dio-11.jpg?v=1792930961" alt=""><b>20 years of DSO →</b></a></div></div>
+  </nav>
+  <div class="right">
+    <button class="icon-btn glassbit" aria-label="Search"><svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+    <a class="btn btn-primary" href="#enquire">Inquire Now</a>
+    <button class="icon-btn glassbit burger" id="burger" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+  </div>
+  </div>
+</header>
+<div class="topfade" aria-hidden="true"></div>
+<div class="mnav" id="mnav">
+  <div><a class="big" href="#business">Business</a><a class="big" href="#industries">Industries</a><a class="big" href="#initiatives">Ecosystem</a><a class="big" href="#life">Living</a><a class="big" href="#zone">About</a><a class="big" href="#district" data-dio>Fly through DSO <small style="font:500 11px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;opacity:.75;margin-left:10px;vertical-align:middle">District.io · 3D</small></a></div>
+  <div class="foot"><a class="btn btn-white btn-lg" href="#enquire">Inquire Now</a><span>Dubai Silicon Oasis · Dubai, UAE</span></div>
+</div>
+
+<!-- DISTRICT.IO FLIGHT -->
+<div class="dio" id="dio" role="dialog" aria-modal="true" aria-label="Fly through Dubai Silicon Oasis" aria-hidden="true">
+  <div class="stage" id="dioStage"><div class="vig"></div></div>
+  <div class="hud" aria-hidden="true"><i></i><i></i><i></i><i></i><div class="alt"><span>Altitude</span><b id="dioAlt">0 m</b><span id="dioPos">25.12° N · 55.38° E</span></div></div>
+  <div class="top">
+    <div class="brand-dio"><em>District.io</em><span>Dubai Silicon Oasis · 3D</span></div>
+    <div class="r"><a class="btn btn-ghost" id="dioFull" href="#" target="_blank" rel="noopener" hidden>Open full experience</a><button class="xbtn" id="dioClose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div>
+  </div>
+  <div class="cap"><div class="k" id="dioK">01 / 08</div><h3><span id="dioTitle"></span></h3><p id="dioText"></p></div>
+  <div class="hint">Scroll · drag · arrow keys</div>
+  <div class="chapters" id="dioChapters" aria-label="Chapters"></div>
+  <div class="enter" id="dioEnter"><div class="box"><b>Preparing flight</b><div class="bar"><i id="dioBar"></i></div></div></div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-inner" id="heroInner">
+    <div class="slide on" data-slide><div class="media"><img src="assets/img/hero-dio-27.jpg?v=1792930961" alt="Dubai Silicon Oasis headquarters campus with the Dubai skyline behind" fetchpriority="high"></div></div>
+    <div class="slide" data-slide><div class="media"><img src="assets/img/hero-dio-15.jpg?v=1792930961" alt="The Dubai Silicon Oasis headquarters at street level" loading="lazy"></div></div>
+    <div class="slide" data-slide><div class="media"><img src="assets/img/hero-dio-21.jpg?v=1792930961" alt="Dubai Silicon Oasis at night from above" loading="lazy"></div></div>
+    <canvas class="mesh" id="mesh"></canvas>
+    <div class="hero-copy">
+      <div id="heroCopy">
+        <span class="eyebrow" id="heroEyebrow">Dubai Silicon Oasis</span>
+        <h1 class="h-display" id="heroTitle">Where breakthroughs happen.</h1>
+        <p id="heroLead">A global tech hub where technology organisations build, scale and thrive. Dubai Silicon Oasis is where the future is built.</p>
+        <div class="cta">
+          <a class="btn btn-primary btn-lg" href="#enquire">Inquire Now <svg class="arr" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="btn btn-ghost btn-lg" href="#zone">Explore the city</a>
+        </div>
+      </div>
+      <div class="hero-chips">
+        <div class="chip-g"><i></i><div><b data-count="40000" data-suffix="+">0</b><span>companies licensed</span></div></div>
+        <div class="chip-g"><i></i><div><b data-count="100000" data-suffix="+">0</b><span>people living &amp; working</span></div></div>
+        <div class="chip-g"><i></i><div><b>7.2 km²</b><span>integrated 15-minute city</span></div></div>
+      </div>
+    </div>
+    <div class="hero-nav" id="heroNav" aria-label="Hero slides"></div>
+    <div class="hero-scroll"><span>Scroll</span><i></i></div>
+  </div>
+    <div class="plan-dock" id="planDock">
+    <div class="plan-bar" id="planBar" data-reveal role="tablist" aria-label="Plan your DSO">
+      <button class="seg on" role="tab" aria-selected="true" data-seg="live"><span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M3 11l9-7 9 7M5 10v10h14V10M10 20v-6h4v6" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span><span><b>Live</b><small>Check properties</small></span></button>
+      <button class="seg" role="tab" aria-selected="false" data-seg="work"><span class="ic"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="7" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2M3 12h18" stroke="currentColor" stroke-width="1.7"/></svg></span><span><b>Work</b><small>Explore companies</small></span></button>
+      <button class="seg" role="tab" aria-selected="false" data-seg="partner"><span class="ic"><svg viewBox="0 0 24 24" fill="none"><circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.7"/><circle cx="16" cy="16" r="3" stroke="currentColor" stroke-width="1.7"/><path d="M10.5 10.5l3 3M16 5l3 3M5 16l3 3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><span><b>Partner</b><small>Explore our innovation community</small></span></button>
+      <button class="seg" role="tab" aria-selected="false" data-seg="grow"><span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8M15 7h6v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Grow</b><small>Establish your Dubai business</small></span></button>
+      <button class="seg" role="tab" aria-selected="false" data-seg="engage"><span class="ic"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><span><b>Engage</b><small>Plan your event</small></span></button>
+      <a class="plan-go" id="planGo" href="#life" aria-label="Go"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+    </div>
+</section>
+
+
+
+<!-- PLANNER -->
+<section class="planner" id="plan">
+  <div class="wrap">
+        <div class="plan-panel" data-reveal role="tabpanel"><div class="plan-stage" id="planStage"><div class="cap"><span class="k" id="planK">Live</span><b id="planCap">Check properties</b></div></div><div class="plan-right"><h3 class="plan-title" id="planTitle"></h3><div class="plan-tiles" id="planPanel"></div></div></div>
+  </div>
+</section>
+
+<!-- LOGOS -->
+<section class="logos" aria-label="Companies based in DSO">
+  <div class="track">
+    <img src="assets/logos/revent.png?v=1792930961" alt="revent business"><img src="assets/logos/peyk.svg?v=1792930961" alt="peyk" class="tall"><img src="assets/logos/logo10.svg?v=1792930961" alt="BitOasis"><img src="assets/logos/telr.png?v=1792930961" alt="Telr" class="tall"><img src="assets/logos/logo9.svg?v=1792930961" alt="Sigma AI" class="tall"><img src="assets/logos/asti.png?v=1792930961" alt="ASTI Academy"><img src="assets/logos/logo5.png?v=1792930961" alt="CyberArrow">
+    <img src="assets/logos/revent.png?v=1792930961" alt=""><img src="assets/logos/peyk.svg?v=1792930961" alt="" class="tall"><img src="assets/logos/logo10.svg?v=1792930961" alt=""><img src="assets/logos/telr.png?v=1792930961" alt="" class="tall"><img src="assets/logos/logo9.svg?v=1792930961" alt="" class="tall"><img src="assets/logos/asti.png?v=1792930961" alt=""><img src="assets/logos/logo5.png?v=1792930961" alt="">
+  </div>
+</section>
+
+<!-- STATEMENT + STATS -->
+<section class="statement pat pat-navy" id="zone" style="--pat-o:.03;--pat-at:92% 50%">
+  <div class="wrap">
+    <span class="eyebrow tag">The economic zone for knowledge &amp; innovation</span>
+    <p data-scrub>Dubai Silicon Oasis is not a business destination. It is a <em>fully integrated technology city</em>: infrastructure, research, education and living in one ecosystem, so companies move faster, collaborate better and scale globally.</p>
+    <div class="stats">
+      <div class="stat"><span class="mono">Community</span><b><span data-count="100000" data-suffix="+">0</span></b><span>Residents, entrepreneurs and professionals</span></div>
+      <div class="stat"><span class="mono">Companies</span><b><span data-count="40000" data-suffix="+">0</span></b><span>Across 11 industry clusters</span></div>
+      <div class="stat"><span class="mono">District</span><b>7.2<small>SQ KM</small></b><span>One integrated technology district</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOME FOR TECH -->
+<section class="sec" style="padding-top:clamp(40px,5vw,80px)">
+  <div class="wrap split">
+    <div class="copy" data-reveal>
+      <span class="eyebrow">Why here</span>
+      <h2 class="h1" data-split>A home for technology companies</h2>
+      <p>DSO brings together everything a technology company needs: infrastructure, talent, research and market access within one unified environment. The foundation to innovate, operate and grow with confidence, whether you are building your first product or scaling globally.</p>
+      <ul><li>100% foreign ownership</li><li>0% tax on qualifying income</li><li>Single-window licensing</li><li>RIT Dubai &amp; R&amp;D labs on site</li><li>Dtec, the region's largest tech coworking</li><li>Homes, schools and parks in 15 minutes</li></ul>
+      <div><a class="btn btn-navy" href="#business">Explore the ecosystem <svg class="arr" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+    </div>
+    <div class="pic" data-reveal><img src="assets/img/zone-office.jpg?v=1792930961" alt="Office interior in Dubai Silicon Oasis" data-parallax="0.12" loading="lazy"><span class="tag"><i></i>Dubai Digital Park · B5</span></div>
+  </div>
+</section>
+
+<!-- BUSINESS RAIL -->
+<section class="rail sec" id="business">
+  <div class="head">
+    <div class="l"><span class="eyebrow">Business ecosystem</span><h2 class="h2" data-split>Built for every stage of business</h2></div>
+    <div class="r"><p>From a first licence at a flexi-desk to a regional headquarters on your own plot. Five ways to grow at DSO, one authority behind all of them.</p><a class="link" href="#enquire">Talk to the setup team <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+  </div>
+  <div class="rail-pin" id="railPin">
+    <div class="rail-track" id="railTrack">
+      <a class="rcard" href="#enquire" data-cur="View"><img src="assets/img/biz-startups.jpg?v=1792930961" alt="" loading="lazy"><span class="no">01 / 05</span><span class="go"><svg viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M5 3h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>Startups</h3><p>Launch, build and scale with accelerators, funding, mentorship and innovation-driven infrastructure.</p><div class="tags"><span>Dtec</span><span>Oraseya Capital</span><span>Flexi-desk</span></div></a>
+      <a class="rcard" href="#enquire" data-cur="View"><img src="assets/img/biz-smes.jpg?v=1792930961" alt="" loading="lazy"><span class="no">02 / 05</span><span class="go"><svg viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M5 3h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>SMEs</h3><p>Flexible licensing, operational support and scalable space designed to help small and medium enterprises grow confidently.</p><div class="tags"><span>#1 zone for SMEs</span><span>Fitted offices</span></div></a>
+      <a class="rcard" href="#enquire" data-cur="View"><img src="assets/img/biz-industrial.jpg?v=1792930961" alt="" loading="lazy"><span class="no">03 / 05</span><span class="go"><svg viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M5 3h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>Industrial</h3><p>Advanced infrastructure, modern facilities and strategic connectivity for industrial and manufacturing operations.</p><div class="tags"><span>Light industrial units</span><span>Logistics corridors</span></div></a>
+      <a class="rcard" href="#enquire" data-cur="View"><img src="assets/img/biz-enterprise.jpg?v=1792930961" alt="" loading="lazy"><span class="no">04 / 05</span><span class="go"><svg viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M5 3h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>Enterprise</h3><p>An integrated environment and world-class infrastructure tailored for large corporations and global headquarters.</p><div class="tags"><span>Built-to-suit</span><span>Regional HQ</span></div></a>
+      <a class="rcard" href="#enquire" data-cur="View"><img src="assets/img/biz-retail.jpg?v=1792930961" alt="" loading="lazy"><span class="no">05 / 05</span><span class="go"><svg viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M5 3h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>Retail</h3><p>Prime retail spaces, flexible formats and high-visibility locations serving a community of 100,000 people.</p><div class="tags"><span>Retail &amp; F&amp;B</span><span>High footfall</span></div></a>
+    </div>
+    <div class="pbar"><i id="railBar"></i></div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="sec" id="industries" style="padding-top:clamp(30px,4vw,60px)">
+  <div class="wrap">
+    <div class="head">
+      <div class="l"><span class="eyebrow">Industrial ecosystem</span><h2 class="h2" data-split>Where every frontier has an address</h2></div>
+      <div class="r"><p>Eight technology frontiers, each with its own cluster, testbeds and community inside the city. Hover or tap to explore.</p></div>
+    </div>
+    <div class="ind" id="ind">
+      <div class="ind-list">
+        <a class="ind-row on" href="#enquire" data-img="assets/img/ind-ai.jpg?v=1792930961"><span class="no">01</span><img class="thumb" src="assets/img/ind-ai.jpg?v=1792930961" alt="" loading="lazy"><div><h3>AI &amp; Quantum Computing</h3><p>Cutting-edge AI and quantum innovation driving future technologies, from research labs to deployed products.</p></div><span class="arr"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a class="ind-row" href="#enquire" data-img="assets/img/ind-3d.jpg?v=1792930961"><span class="no">02</span><img class="thumb" src="assets/img/ind-3d.jpg?v=1792930961" alt="" loading="lazy"><div><h3>3D Printing &amp; AM</h3><p>Advanced additive manufacturing and prototyping, with industrial units next door to the design studios.</p></div><span class="arr"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a class="ind-row" href="#enquire" data-img="assets/img/ind-deeptech.jpg?v=1792930961"><span class="no">03</span><img class="thumb" src="assets/img/ind-deeptech.jpg?v=1792930961" alt="" loading="lazy"><div><h3>Deep Tech</h3><p>Breakthrough deep tech from research to real-world impact, backed by RIT Dubai and the R&amp;D clusters.</p></div><span class="arr"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a class="ind-row" href="#enquire" data-img="assets/img/ind-drones.jpg?v=1792930961"><span class="no">04</span><img class="thumb" src="assets/img/ind-drones.jpg?v=1792930961" alt="" loading="lazy"><div><h3>Drones &amp; UAS</h3><p>Drone and unmanned systems innovation with live trial corridors and future-ready infrastructure.</p></div><span class="arr"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a class="ind-row" href="#enquire" data-img="assets/img/ind-fintech.jpg?v=1792930961"><span class="no">05</span><img class="thumb" src="assets/img/ind-fintech.jpg?v=1792930961" alt="" loading="lazy"><div><h3>Fintech &amp; Web3</h3><p>Fintech and Web3 builders with a future-ready regulatory ecosystem and regional market access.</p></div><span class="arr"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a class="ind-row" href="#enquire" data-img="assets/img/ind-proptech.jpg?v=1792930961"><span class="no">06</span><img class="thumb" src="assets/img/ind-proptech.jpg?v=1792930961" alt="" loading="lazy"><div><h3>Prop Tech</h3><p>Transforming real estate through property technology, tested in a city that is itself a living lab.</p></div><span class="arr"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a class="ind-row" href="#enquire" data-img="assets/img/ind-robotics.jpg?v=1792930961"><span class="no">07</span><img class="thumb" src="assets/img/ind-robotics.jpg?v=1792930961" alt="" loading="lazy"><div><h3>Robotics &amp; Automation</h3><p>Robotics and automation for smarter, more efficient industries, from factory floors to last-mile delivery.</p></div><span class="arr"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a class="ind-row" href="#enquire" data-img="assets/img/ind-software.jpg?v=1792930961"><span class="no">08</span><img class="thumb" src="assets/img/ind-software.jpg?v=1792930961" alt="" loading="lazy"><div><h3>Software &amp; SaaS</h3><p>Scalable software and SaaS innovation for global growth, with talent pipelines from the campus next door.</p></div><span class="arr"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      </div>
+      <div class="ind-stage" id="indStage"><div class="cap"><b id="indCap">AI &amp; Quantum Computing</b><span id="indNo">01 / 08</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY DSO -->
+<section class="why" id="why">
+  <div class="wm" data-wm>WHY DSO</div>
+  <div class="wrap">
+    <div class="grid4" data-stagger>
+      <div class="wcard" data-spot><span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20h16M6 20V9l6-5 6 5v11M10 20v-6h4v6" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span><h3>Business &amp; <br>Licensing</h3><p>Set up and operate with ease in a free zone built for technology companies.</p><a class="link" href="#enquire">Start a licence <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      <div class="wcard" data-spot><span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M9 3h6M10 3v5l-5.5 9A2 2 0 006.2 20h11.6a2 2 0 001.7-3L14 8V3" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span><h3>Innovation <br>&amp; R&amp;D</h3><p>Access research institutions, universities and advanced infrastructure.</p><a class="link" href="#industries">See the clusters <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      <div class="wcard" data-spot><span class="ic"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M8 21h8M12 18v3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><h3>Workspaces &amp; <br>Facilities</h3><p>From coworking to industrial units, built for every stage of growth.</p><a class="link" href="#facilities">Browse spaces <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      <div class="wcard" data-spot><span class="ic"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><h3>Living &amp; <br>Community</h3><p>A 15-minute city where people live, work and thrive together.</p><a class="link" href="#life">Life at DSO <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- BUSINESS & LIFE -->
+<section class="life sec" id="life">
+  <div class="wm" data-wm>LIVE &amp; GROW</div>
+  <div class="wrap">
+    <div class="head">
+      <div class="l"><span class="eyebrow">Business &amp; life</span><h2 class="h2" data-split>Where work meets life</h2></div>
+      <div class="r"><p>A fully integrated city where professionals, families and innovators live within a connected environment. Schools, parks, retail and workplaces are minutes apart.</p></div>
+    </div>
+    <div class="tabs" data-reveal id="tabs">
+      <nav aria-label="Benefits">
+        <button class="on" data-tab="0"><span class="k">01</span><span>100% foreign<b>ownership</b></span></button>
+        <button data-tab="1"><span class="k">02</span><span>0% tax on<b>qualifying income</b></span></button>
+        <button data-tab="2"><span class="k">03</span><span>Fast and<b>simplified setup</b></span></button>
+        <button data-tab="3"><span class="k">04</span><span>Access to<b>global markets</b></span></button>
+      </nav>
+      <div class="panels">
+        <div class="panel on"><div class="tx"><h3>Own it <b>outright</b></h3><p>Companies licensed in Dubai Silicon Oasis are 100% foreign-owned. No local sponsor, no shareholding compromise and full control of your IP, your profits and your direction from day one.</p><div class="pts"><span>No local partner required</span><span>Full repatriation of capital</span><span>IP stays with you</span></div></div><div class="pic"><img src="assets/img/gal-meeting.jpg?v=1792930961" alt="" loading="lazy"></div></div>
+        <div class="panel"><div class="tx"><h3>Keep what you <b>build</b></h3><p>As a qualifying free zone person, income from qualifying activities is taxed at 0% under the UAE corporate tax regime, with no personal income tax and full repatriation of profits. More runway, more reinvestment, more speed.</p><div class="pts"><span>0% on qualifying income</span><span>No personal income tax</span><span>Customs-free zone</span></div></div><div class="pic"><img src="assets/img/fac-towers.jpg?v=1792930961" alt="" loading="lazy"></div></div>
+        <div class="panel"><div class="tx"><h3>Licensed in <b>days</b>, not months</h3><p>One authority, one portal. Company registration, licensing, visas and office allocation are handled under a single roof, so founders go from application to operations in a fraction of the usual time.</p><div class="pts"><span>Single-window setup</span><span>Flexi-desk to full HQ</span><span>Visa services on site</span></div></div><div class="pic"><img src="assets/img/form-meeting.jpg?v=1792930961" alt="" loading="lazy"></div></div>
+        <div class="panel"><div class="tx"><h3>Between <b>East and West</b></h3><p>Two-thirds of the world's population lives within an eight-hour flight of Dubai. DSO sits minutes from two international airports and the city's ports, logistics corridors and digital backbone.</p><div class="pts"><span>2 airports within 25 min</span><span>Dubai Metro Blue Line</span><span>Gateway to MENA, Asia, Africa</span></div></div><div class="pic"><img src="assets/img/fac-land.jpg?v=1792930961" alt="" loading="lazy"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INITIATIVES BENTO -->
+<section class="sec" id="initiatives">
+  <div class="wrap">
+    <div class="head">
+      <div class="l"><span class="eyebrow">Strategic initiatives</span><h2 class="h2" data-split>Where DSO is placing its bets</h2></div>
+      <div class="r"><p>Five strategic programmes shaping the next decade of the city, each with testbeds, partners and incentives for companies that join early.</p></div>
+    </div>
+    <div class="bento" data-stagger>
+      <a class="bcard big" href="#enquire" data-cur="View"><img src="assets/img/strat-manufacturing.jpg?v=1792930961" alt="" loading="lazy"><span class="k">01</span><h3>Advanced Manufacturing</h3><p>Smart manufacturing through automation and intelligent production, anchored by the industrial zone and additive-manufacturing cluster.</p></a>
+      <a class="bcard" href="#enquire" data-cur="View"><img src="assets/img/strat-cyber.jpg?v=1792930961" alt="" loading="lazy"><span class="k">02</span><h3>Cybersecurity</h3><p>Digital trust for a connected city.</p></a>
+      <a class="bcard" href="#enquire" data-cur="View"><img src="assets/img/strat-energy.jpg?v=1792930961" alt="" loading="lazy"><span class="k">03</span><h3>Clean Tech &amp; Sustainability</h3><p>Clean energy innovation for a sustainable future.</p></a>
+      <a class="bcard" href="#enquire" data-cur="View"><img src="assets/img/strat-ict.jpg?v=1792930961" alt="" loading="lazy"><span class="k">04</span><h3>ICT &amp; Infrastructure</h3><p>The digital backbone for scalable innovation.</p></a>
+      <a class="bcard" href="#enquire" data-cur="View"><img src="assets/img/strat-mobility.jpg?v=1792930961" alt="" loading="lazy"><span class="k">05</span><h3>Mobility &amp; Autonomous</h3><p>Intelligent, connected mobility systems.</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGINE -->
+<section class="imagine sec" id="imagine" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <div class="l"><span class="eyebrow">Right reasons</span><h2 class="h2" data-split>Imagine building the future here</h2></div>
+      <div class="r"><p>Workplaces, labs, cafés, campuses and homes, all within a 15-minute walk. Drag to look around.</p><a class="btn btn-primary" href="#enquire">Inquire Now</a></div>
+    </div>
+  </div>
+  <div class="gal" id="gal" data-cur="Drag">
+    <button class="ctrl prev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none"><path d="M19 12H5M11 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button class="ctrl next" aria-label="Next"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <div class="track" id="galTrack">
+      <img class="wide" src="assets/img/gal-lounge.jpg?v=1792930961" alt="Lounge in a DSO workspace" loading="lazy">
+      <div class="col"><img src="assets/img/gal-speakers.jpg?v=1792930961" alt="Speakers at a DSO event" loading="lazy"><img src="assets/img/gal-monitor.jpg?v=1792930961" alt="Engineers at a workstation" loading="lazy"></div>
+      <img class="portrait" src="assets/img/gal-meeting.jpg?v=1792930961" alt="Team meeting" loading="lazy">
+      <img class="wide" src="assets/img/dio-14.jpg?v=1792930961" alt="Palm-lined boulevard in Dubai Silicon Oasis" loading="lazy">
+      <div class="col"><img src="assets/img/gal-server.jpg?v=1792930961" alt="Engineer in a data centre" loading="lazy"><img src="assets/img/gal-retail.jpg?v=1792930961" alt="Retail space" loading="lazy"></div>
+      <img class="sq" src="assets/img/gal-audience.jpg?v=1792930961" alt="Audience at a conference" loading="lazy">
+      <img class="wide" src="assets/img/dio-19.jpg?v=1792930961" alt="Aerial view of Dubai Silicon Oasis" loading="lazy">
+      <img class="portrait" src="assets/img/gal-womenintech.jpg?v=1792930961" alt="Women in Tech event" loading="lazy">
+    </div>
+    <div class="bar"><i id="galBar"></i></div>
+  </div>
+</section>
+
+<!-- FACILITIES -->
+<section class="sec" id="facilities">
+  <div class="wrap">
+    <div class="head">
+      <div class="l"><span class="eyebrow">Property portfolio</span><h2 class="h2" data-split>Facilities to reach your next goals</h2></div>
+      <div class="r"><p>Six formats, one landlord. Start small, scale in place and never change your address.</p></div>
+    </div>
+    <div class="fac" id="fac">
+      <div class="fac-stage" id="facStage"><span class="k" id="facK">01 / 06</span></div>
+      <div class="fac-list">
+        <div class="frow on" data-img="assets/img/fac-coworking.jpg?v=1792930961"><span class="no">01</span><img class="thumb" src="assets/img/fac-coworking.jpg?v=1792930961" alt="" loading="lazy"><h3>Co-working Spaces</h3><p>Flexible desks and private studios inside Dtec, the region's largest technology coworking campus.</p><div class="meta"><span>From 1 desk</span><span>Licence included</span></div></div>
+        <div class="frow" data-img="assets/img/dio-26.jpg?v=1792930961"><span class="no">02</span><img class="thumb" src="assets/img/dio-26.jpg?v=1792930961" alt="" loading="lazy"><h3>Commercial Offices</h3><p>Fitted and shell-and-core offices across TechnoHub, Silicon Park and the headquarters complex.</p><div class="meta"><span>50 to 5,000 m²</span><span>Fitted or shell</span></div></div>
+        <div class="frow" data-img="assets/img/fac-industrial.jpg?v=1792930961"><span class="no">03</span><img class="thumb" src="assets/img/fac-industrial.jpg?v=1792930961" alt="" loading="lazy"><h3>Light Industrial Units</h3><p>Warehouses and light industrial units with direct access to Dubai's logistics corridors.</p><div class="meta"><span>Dock access</span><span>Power on demand</span></div></div>
+        <div class="frow" data-img="assets/img/fac-towers.jpg?v=1792930961"><span class="no">04</span><img class="thumb" src="assets/img/fac-towers.jpg?v=1792930961" alt="" loading="lazy"><h3>Boutique Towers</h3><p>Stand-alone office buildings for companies that want their name on the door.</p><div class="meta"><span>Whole building</span><span>Naming rights</span></div></div>
+        <div class="frow" data-img="assets/img/dio-09.jpg?v=1792930961"><span class="no">05</span><img class="thumb" src="assets/img/dio-09.jpg?v=1792930961" alt="" loading="lazy"><h3>Land and Built-to-Suit</h3><p>Plots and built-to-suit developments for headquarters, campuses and production facilities.</p><div class="meta"><span>Masterplan 2040</span><span>Long leases</span></div></div>
+        <div class="frow" data-img="assets/img/fac-retail.jpg?v=1792930961"><span class="no">06</span><img class="thumb" src="assets/img/fac-retail.jpg?v=1792930961" alt="" loading="lazy"><h3>Retail Spaces</h3><p>High-footfall retail and F&amp;B units serving a community of 100,000 people.</p><div class="meta"><span>Street-level</span><span>Community anchored</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUSTED -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="trusted" data-reveal>
+      <div class="blue pat" style="--pat-o:.05;--pat-at:96% 50%">
+        <h2 class="h2">Trusted by global innovators</h2>
+        <p>Startups, SMEs and multinational companies choose DSO as their base for innovation and growth.</p>
+        <div class="row"><div><b><span data-count="40000" data-suffix="+">0</span></b><span>companies</span></div><div><b><span data-count="72">0</span></b><span>nationalities among startups</span></div><div><b>#1</b><span>Global Free Zone for SMEs · fDi</span></div></div>
+      </div>
+      <div class="pic"><img src="assets/img/dio-10.jpg?v=1792930961" alt="Office campus in Dubai Silicon Oasis" loading="lazy" data-parallax="0.08"></div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="sec" id="news" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <div class="l"><span class="eyebrow">News</span><h2 class="h2" data-split>Catch up with the latest</h2></div>
+      <div class="r"><a class="link" href="#">All news <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+    </div>
+    <div class="news-grid">
+      <a class="feature" href="#" data-reveal data-cur="Read">
+        <div class="pic"><img src="assets/img/news-feature.jpg?v=1792930961" alt="" loading="lazy"></div>
+        <div class="body"><div class="meta"><span class="chip">Awards</span><time>2026</time></div><h3>Dubai Silicon Oasis awarded Global Free Zone of the Year for SMEs</h3><p>fDi Intelligence, the Financial Times data service, ranks DSO first worldwide for small and medium enterprises and for research and development.</p></div>
+      </a>
+      <div class="nlist" data-stagger>
+        <a class="nitem" href="#"><div class="pic"><img src="assets/img/news-1.jpg?v=1792930961" alt="" loading="lazy"></div><div><div class="top"><span class="chip">Summit</span><time>2026</time></div><h4>Dubai to host the Doers Summit 2026 at Dubai Silicon Oasis</h4></div></a>
+        <a class="nitem" href="#"><div class="pic"><img src="assets/img/news-2.jpg?v=1792930961" alt="" loading="lazy"></div><div><div class="top"><span class="chip">Expansion</span><time>2026</time></div><h4>AED 12.8 billion expansion project announced for the city</h4></div></a>
+        <a class="nitem" href="#"><div class="pic"><img src="assets/img/news-3.jpg?v=1792930961" alt="" loading="lazy"></div><div><div class="top"><span class="chip">Infrastructure</span><time>2026</time></div><h4>AI-ready data centres to be built with VOLT UAE</h4></div></a>
+        <a class="nitem" href="#"><div class="pic"><img src="assets/img/news-4.jpg?v=1792930961" alt="" loading="lazy"></div><div><div class="top"><span class="chip">Partnership</span><time>2026</time></div><h4>DSO partners with noon Minutes on rapid delivery</h4></div></a>
+        <a class="nitem" href="#"><div class="pic"><img src="assets/img/news-5.jpg?v=1792930961" alt="" loading="lazy"></div><div><div class="top"><span class="chip">ESG</span><time>2026</time></div><h4>DIEZ publishes its first ESG report</h4></div></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENQUIRE -->
+<section class="sec" id="enquire" style="padding-top:0">
+  <div class="wrap">
+    <div class="enq pat" data-reveal style="--pat-o:.055;--pat-at:6% 14%">
+      <div class="copy">
+        <h2 class="h2">Establish your enterprise at DSO</h2>
+        <p>Connect with our team to explore licensing, infrastructure and strategic expansion opportunities tailored to your organisation.</p>
+        <div class="opts" id="opts">
+          <button class="opt" data-topic="Establish Presence"><svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M5 21V4h11l-1.5 3L16 10H5" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>Establish Presence<svg class="arr" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button class="opt" data-topic="Expand Operations"><svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8M15 7h6v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Expand Operations<svg class="arr" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button class="opt" data-topic="Corporate Inquiry"><svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M3 11l9-7 9 7M5 10v10h14V10M10 20v-6h4v6" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>Corporate Inquiry<svg class="arr" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button class="opt" data-topic="Other"><svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Other<svg class="arr" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+        <form class="form" id="enqForm" novalidate>
+          <input type="hidden" name="topic" id="enqTopic">
+          <div class="row"><input name="name" placeholder="Full name" autocomplete="name" required><input name="company" placeholder="Company" autocomplete="organization"></div>
+          <div class="row"><input type="email" name="email" placeholder="Work email" autocomplete="email" required><input name="phone" placeholder="Phone (optional)" autocomplete="tel"></div>
+          <textarea name="message" placeholder="Tell us about your plans"></textarea>
+          <div class="foot"><button class="btn btn-white" type="submit">Send inquiry</button><button class="back" type="button" id="enqBack">← Choose a different topic</button></div>
+          <div class="ok" id="enqOk"><b>Thank you.</b>Our team will come back to you within two working days.</div>
+        </form>
+      </div>
+      <div class="pic"><img src="assets/img/form-meeting.jpg?v=1792930961" alt="DSO advisor in a meeting with a founder" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faqs" style="padding-top:0">
+  <div class="wrap">
+    <div class="faq-grid">
+      <div class="faq-left" data-reveal>
+        <span class="eyebrow">FAQs</span>
+        <h2 class="h2">Frequently asked questions</h2>
+        <div><a class="btn btn-primary" href="#enquire">Contact Us</a></div>
+        <div class="pic"><img src="assets/img/faq-audience.jpg?v=1792930961" alt="Community event in DSO" loading="lazy"></div>
+      </div>
+      <div class="acc" data-stagger>
+        <details open><summary>Can multinational companies establish regional headquarters in DSO?<i></i></summary><div class="a">Yes. Dubai Silicon Oasis provides a structured free zone framework suitable for multinational corporations establishing regional headquarters in the Middle East. Enterprises benefit from scalable commercial infrastructure and a regulated business environment designed for long-term operations.</div></details>
+        <details><summary>What are the tax benefits for enterprise-level companies?<i></i></summary><div class="a">Qualifying free zone companies benefit from a 0% corporate tax rate on qualifying income under the UAE corporate tax regime, no personal income tax, customs duty exemptions within the zone and full repatriation of capital and profits.</div></details>
+        <details><summary>Is 100% foreign ownership permitted?<i></i></summary><div class="a">Yes. Every company licensed in Dubai Silicon Oasis can be fully foreign-owned. No local sponsor or service agent is required.</div></details>
+        <details><summary>What commercial spaces are available for large teams?<i></i></summary><div class="a">DSO offers fitted and shell-and-core offices in TechnoHub and Silicon Park, boutique office buildings, light industrial units, land plots and built-to-suit developments. Teams can start in Dtec coworking and scale into a dedicated headquarters without leaving the city.</div></details>
+        <details><summary>Can enterprises collaborate with startups within DSO?<i></i></summary><div class="a">Absolutely. Dtec hosts more than a thousand startups, Oraseya Capital invests from within the zone and the industry clusters run regular programmes, pilots and testbeds, including drone, robotics and autonomous mobility trials on DSO's own streets.</div></details>
+        <details><summary>What regulatory approvals are required to establish an enterprise in DSO?<i></i></summary><div class="a">Company registration and licensing are handled by the Dubai Integrated Economic Zones Authority (DIEZ) through a single-window process. Depending on the activity, sector-specific approvals are coordinated by the DSO business setup team.</div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final" id="cta">
+  <div class="final-inner">
+    <div class="bg"><img src="assets/img/dio-22.jpg?v=1792930961" alt="" loading="lazy" data-parallax="0.18"></div>
+    <div class="glass" data-reveal>
+      <h2 data-split>Build your future at Dubai Silicon Oasis</h2>
+      <div class="cta"><a class="btn btn-primary btn-lg" href="#enquire">Inquire Now</a><a class="btn btn-white btn-lg" href="#contact">Contact Us</a></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site pat" id="contact" style="--pat-o:.045;--pat-at:92% 28%">
+  <div class="wrap">
+    <div class="top">
+      <img src="assets/logos/dso-wordmark.svg?v=1792930961" alt="Dubai Silicon Oasis">
+      <h2 class="h2">Do you have any questions?</h2>
+      <p>Our team is ready to support your enterprise expansion at Dubai Silicon Oasis.</p>
+      <div class="cta"><a class="btn btn-white" href="#enquire">Inquire Now</a><a class="btn btn-white" href="https://wa.me/" target="_blank" rel="noopener"><img src="assets/logos/whatsapp.png?v=1792930961" alt="">WhatsApp</a></div>
+    </div>
+    <div class="cols">
+      <div><h4>Business</h4><ul><li><a href="#enquire">Setup a new business</a></li><li><a href="#business">Services</a></li><li><a href="#facilities">Property Portfolio</a></li></ul></div>
+      <div><h4>Industries</h4><ul><li><a href="#industries">Emerging Technology</a></li><li><a href="#initiatives">Mobility</a></li><li><a href="#initiatives">Sustainability</a></li><li><a href="#business">Multinational Enterprises</a></li><li><a href="#business">Service Providers</a></li></ul></div>
+      <div><h4>Ecosystem</h4><ul><li><a href="#zone">Our Mandate</a></li><li><a href="#business">Accelerators &amp; Incubators</a></li><li><a href="#business">Venture Capital</a></li><li><a href="#why">Research &amp; Development</a></li><li><a href="#why">Education</a></li></ul></div>
+      <div><h4>Living</h4><ul><li><a href="#life">Residential Spaces</a></li><li><a href="#life">Life at DSO</a></li><li><a href="#life">Short Stay</a></li><li><a href="#life">Residents Support</a></li></ul></div>
+      <div><h4>About</h4><ul><li><a href="#zone">About DSO</a></li><li><a href="#news">What's on</a></li><li><a href="#enquire">For Members</a></li></ul></div>
+    </div>
+    <div class="bottom">
+      <div class="soc">
+        <a href="#" aria-label="Instagram"><img src="assets/icons/footer-06.svg?v=1792930961" alt=""></a>
+        <a href="#" aria-label="TikTok"><img src="assets/icons/footer-09.svg?v=1792930961" alt=""></a>
+        <a href="#" aria-label="LinkedIn"><img src="assets/icons/footer-08.svg?v=1792930961" alt=""></a>
+        <a href="#" aria-label="Phone"><img src="assets/icons/footer-04.svg?v=1792930961" alt=""></a>
+        <a href="#" aria-label="Email"><img src="assets/icons/footer-07.svg?v=1792930961" alt=""></a>
+      </div>
+      <div class="legal"><a href="#">Terms &amp; Conditions</a><a href="#">Privacy Policy</a><small>© Dubai Silicon Oasis</small><a class="member" href="https://www.diez.ae/" target="_blank" rel="noopener" aria-label="DIEZ — Dubai Integrated Economic Zones"><small>A member of</small><img src="assets/logos/diez-white.png?v=1792930961" alt="DIEZ — Dubai Integrated Economic Zones"></a></div>
+    </div>
+  </div>
+  <div class="giant" aria-hidden="true">Dubai Silicon Oasis</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
+const $ = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+
+/* ─── smooth scroll ─── */
+let lenis;
+if(!reduce){
+  lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add(t => lenis.raf(t * 1000));
+  gsap.ticker.lagSmoothing(0);
+  lenis.stop();
+}
+const scrollTo = (t, off=-90) => lenis ? lenis.scrollTo(t, {offset: off, duration: 1.4, easing: x => 1 - Math.pow(1 - x, 4)}) : t.scrollIntoView({behavior:'smooth'});
+$$('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+  const id = a.getAttribute('href'); if(id === '#') { e.preventDefault(); return; }
+  const t = $(id); if(!t) return; e.preventDefault(); closeMenu(); scrollTo(t, id === '#top' ? 0 : -90);
+}));
+
+/* ─── split headlines ─── */
+$$('[data-split]').forEach(el => {
+  el.innerHTML = el.innerHTML.trim().split(/(<br\s*\/?>|\s+)/).filter(Boolean).map(w => w.match(/^<br/) ? w : (w.trim() ? `<span class="word"><span>${w}</span></span>` : ' ')).join(' ');
+});
+$$('[data-scrub]').forEach(p => { const r = p.innerHTML.trim().split(/(\s+|<em>|<\/em>)/).filter(Boolean).reduce((acc,t)=>{ if(t==='<em>'){acc.hl=true;return acc;} if(t==='</em>'){acc.hl=false;return acc;} if(t.trim()) acc.out+=`<span class="w${acc.hl?' hl':''}">${t}</span>`; else acc.out+=' '; return acc; },{out:'',hl:false}); p.innerHTML = r.out; });
+
+/* ─── cursor ─── */
+const cursor = $('#cursor'), curLabel = $('#curLabel');
+if(fine && !reduce){
+  document.body.classList.add('has-cursor');
+  const pos = {x: innerWidth/2, y: innerHeight/2}, tgt = {...pos};
+  addEventListener('pointermove', e => {
+    tgt.x = e.clientX; tgt.y = e.clientY;
+    const d = e.target.closest('[data-cur]'), l = e.target.closest('a,button,summary');
+    cursor.classList.toggle('is-label', !!d); cursor.classList.toggle('is-link', !!l && !d); if(d) curLabel.textContent = d.dataset.cur;
+    document.body.classList.toggle('cur-dark', !!e.target.closest('.hero,.rcard,.bcard,.final,footer,.ind-stage,.fac-stage,.enq,.trusted .blue,.mnav'));
+  });
+  gsap.ticker.add(() => { pos.x += (tgt.x - pos.x) * .22; pos.y += (tgt.y - pos.y) * .22; cursor.style.transform = `translate(${pos.x}px,${pos.y}px)`; });
+}
+
+/* ─── spotlight cards ─── */
+$$('[data-spot]').forEach(c => c.addEventListener('pointermove', e => { const r = c.getBoundingClientRect(); c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px'); }));
+
+/* ─── loader logo: inline the wordmark so its paths can light up ─── */
+async function buildLoaderLogo(){
+  try{ const svg = await (await fetch('assets/logos/dso-vertical.svg?v=1792930961')).text(); const doc = new DOMParser().parseFromString(svg, 'image/svg+xml'); $('#loaderLogo').innerHTML = doc.documentElement.innerHTML; }
+  catch(e){ $('#loaderLogo').outerHTML = '<img class="loader-logo" src="assets/logos/dso-vertical.svg?v=1792930961" alt="">'; }
+}
+
+/* ─── hero ─── */
+const hero = (() => {
+  const slides = $$('[data-slide]');
+  const copy = [
+    {eye:'Dubai Silicon Oasis', title:'Where breakthroughs happen.', lead:'A global tech hub where technology organisations build, scale and thrive. Dubai Silicon Oasis is where the future is built.'},
+    {eye:'The integrated technology city', title:'Build the future here.', lead:'7.2 square kilometres of offices, labs, homes, schools and parks. A 15-minute city inside Dubai’s Urban Master Plan 2040.'},
+    {eye:'Free zone for knowledge & innovation', title:'Own it. Scale it. Live it.', lead:'100% foreign ownership, 0% tax on qualifying income and a single-window setup. From first licence to global headquarters.'},
+  ];
+  const nav = $('#heroNav'); let i = 0, timer = null, dur = 7000;
+  copy.forEach((_, k) => { const b = document.createElement('button'); b.setAttribute('aria-label', `Slide ${k+1}`); b.innerHTML = '<i></i>'; b.addEventListener('click', () => go(k)); nav.appendChild(b); });
+  const n = document.createElement('span'); n.className = 'n'; nav.appendChild(n);
+  const btns = $$('button', nav);
+  const titleEl = $('#heroTitle'), leadEl = $('#heroLead'), eyeEl = $('#heroEyebrow');
+  function setCopy(k){ eyeEl.textContent = copy[k].eye; leadEl.textContent = copy[k].lead; titleEl.innerHTML = copy[k].title.split(' ').map(w => `<span class="word"><span>${w}</span></span>`).join(' '); n.textContent = `0${k+1} / 0${copy.length}`; }
+  function animateIn(){ gsap.fromTo($$('#heroTitle .word > span'), {y:"140%"}, {y:'0%', duration:1.1, ease:'expo.out', stagger:.07}); gsap.fromTo([eyeEl, leadEl, $('#heroCopy .cta')], {opacity:0, y:18}, {opacity:1, y:0, duration:1, ease:'power3.out', stagger:.1, delay:.15}); }
+  function kb(k){ gsap.fromTo($('img', slides[k]), {scale:1.12}, {scale:1.0, duration: dur/1000 + 1.5, ease:'none', overwrite:true}); }
+  function go(k){
+    const prev = i, next = (k + copy.length) % copy.length; if(next === prev) return; i = next;
+    btns.forEach((b, m) => { b.classList.toggle('on', m === i); gsap.killTweensOf($('i', b)); gsap.set($('i', b), {scaleX: m < i ? 1 : 0}); });
+    gsap.to($('i', btns[i]), {scaleX:1, duration: dur/1000, ease:'none'});
+    slides[prev].classList.remove('on'); slides[i].classList.add('on');
+    gsap.fromTo(slides[i], {opacity:0}, {opacity:1, duration:1.2, ease:'power2.inOut'}); kb(i);
+    gsap.to([titleEl, leadEl, eyeEl], {opacity:0, y:-10, duration:.35, ease:'power2.in', onComplete(){ setCopy(i); gsap.set([titleEl, leadEl, eyeEl], {opacity:1, y:0}); animateIn(); }});
+    clearTimeout(timer); timer = setTimeout(() => go(i+1), dur);
+  }
+  /* prime at script time so the static HTML copy never flashes under the lifting loader; start() is called while the curtain lifts */
+  setCopy(0); gsap.set([eyeEl, leadEl, $('#heroCopy .cta')], {opacity:0});
+  function start(){ btns[0].classList.add('on'); kb(0); animateIn(); gsap.to($$('.chip-g'), {x:0, opacity:1, duration:1, ease:'expo.out', stagger:.1, delay:.5}); gsap.to($('i', btns[0]), {scaleX:1, duration: dur/1000, ease:'none'}); timer = setTimeout(() => go(1), dur); }
+  return {start};
+})();
+
+/* ─── mesh canvas: on-brand "silicon" network, lightweight ─── */
+(function mesh(){
+  if(reduce) return;
+  const c = $('#mesh'), ctx = c.getContext('2d'); const dpr = Math.min(devicePixelRatio, 2); let W, H, pts = [], mouse = {x:-1e4, y:-1e4}, run = true;
+  function size(){ const r = c.parentElement.getBoundingClientRect(); W = c.width = r.width * dpr; H = c.height = r.height * dpr; c.style.width = r.width+'px'; c.style.height = r.height+'px'; const n = Math.round(Math.min(80, (r.width*r.height)/24000)); pts = Array.from({length:n}, () => ({x:Math.random()*W, y:Math.random()*H, vx:(Math.random()-.5)*.25*dpr, vy:(Math.random()-.5)*.25*dpr, r:(Math.random()*1.4+.8)*dpr})); }
+  size(); addEventListener('resize', size);
+  c.parentElement.addEventListener('pointermove', e => { const r = c.getBoundingClientRect(); mouse.x = (e.clientX - r.left)*dpr; mouse.y = (e.clientY - r.top)*dpr; });
+  c.parentElement.addEventListener('pointerleave', () => { mouse.x = mouse.y = -1e4; });
+  ScrollTrigger.create({ trigger:'#top', start:'top bottom', end:'bottom top', onToggle: s => run = s.isActive });
+  const D = 150*dpr, M = 140*dpr;
+  (function frame(){
+    if(run){
+      ctx.clearRect(0,0,W,H);
+      for(const p of pts){ p.x += p.vx; p.y += p.vy; if(p.x<0||p.x>W) p.vx*=-1; if(p.y<0||p.y>H) p.vy*=-1; const dx = p.x-mouse.x, dy = p.y-mouse.y, d = Math.hypot(dx,dy); if(d < M){ p.x += dx/d*1.2; p.y += dy/d*1.2; } }
+      ctx.lineWidth = .8*dpr;
+      for(let a=0;a<pts.length;a++) for(let b=a+1;b<pts.length;b++){ const dx=pts[a].x-pts[b].x, dy=pts[a].y-pts[b].y, d=dx*dx+dy*dy; if(d<D*D){ ctx.strokeStyle=`rgba(0,255,212,${(1-Math.sqrt(d)/D)*.35})`; ctx.beginPath(); ctx.moveTo(pts[a].x,pts[a].y); ctx.lineTo(pts[b].x,pts[b].y); ctx.stroke(); } }
+      ctx.fillStyle='rgba(255,255,255,.9)'; for(const p of pts){ ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill(); }
+    }
+    requestAnimationFrame(frame);
+  })();
+})();
+
+/* ─── District.io flight: full-screen city fly-through. Set DIO_URL to the published Framer experience to embed it instead of the native flight ─── */
+const DIO_URL = '';
+const dio = (() => {
+  const root = $('#dio'), stage = $('#dioStage'), chap = $('#dioChapters'), enter = $('#dioEnter');
+  const S = [
+    {src:'assets/img/fly-01.jpg?v=1792930961', t:'Approach', title:'Twenty minutes from Downtown Dubai', text:'Between Dubai’s centre and Al Ain Road, with the airport, Expo City and the E311 corridor within reach.', alt:'1,800 m', pos:'25.19° N · 55.27° E', from:{scale:1.22,x:-3,y:3}, to:{scale:1.04,x:2,y:-2}},
+    {src:'assets/img/fly-02.jpg?v=1792930961', t:'Master plan', title:'7.2 km² planned as one city', text:'Business, industry, education, residential communities and leisure, planned together on a single master plan.', alt:'1,200 m', pos:'25.12° N · 55.38° E', from:{scale:1.08,x:2,y:-2}, to:{scale:1.26,x:-2,y:2}},
+    {src:'assets/img/fly-03.jpg?v=1792930961', t:'Headquarters', title:'The DSO headquarters campus', text:'The authority, Dtec and the central business campus around the landmark tower.', alt:'420 m', pos:'25.12° N · 55.38° E', from:{scale:1.24,x:3,y:2}, to:{scale:1.06,x:-2,y:-1}},
+    {src:'assets/img/fly-04.jpg?v=1792930961', t:'Business district', title:'Offices, labs and light industry', text:'Office towers, R&D facilities and build-to-suit plots for companies that need more than a desk.', alt:'310 m', pos:'25.11° N · 55.37° E', from:{scale:1.06,x:-2,y:2}, to:{scale:1.22,x:3,y:-2}},
+    {src:'assets/img/fly-05.jpg?v=1792930961', t:'Communities', title:'Where 100,000 people live and work', text:'Villas, apartments, schools and parks a short walk from the office.', alt:'520 m', pos:'25.13° N · 55.39° E', from:{scale:1.2,x:2,y:-3}, to:{scale:1.04,x:-3,y:2}},
+    {src:'assets/img/fly-06.jpg?v=1792930961', t:'Lake district', title:'Lakes, promenades and the 15-minute city', text:'Retail, dining and leisure arranged around water, so daily life stays within fifteen minutes.', alt:'260 m', pos:'25.12° N · 55.40° E', from:{scale:1.06,x:3,y:1}, to:{scale:1.24,x:-2,y:-2}},
+    {src:'assets/img/fly-07.jpg?v=1792930961', t:'Street level', title:'Designed for people, not only for traffic', text:'Shaded walkways, cycle paths and green boulevards link every district.', alt:'4 m', pos:'25.12° N · 55.38° E', from:{scale:1.26,x:-3,y:-2}, to:{scale:1.05,x:2,y:2}},
+    {src:'assets/img/fly-08.jpg?v=1792930961', t:'After dark', title:'A city that keeps running', text:'Data centres, 24/7 operations and a community that does not close at six.', alt:'900 m', pos:'25.12° N · 55.38° E', from:{scale:1.05,x:2,y:2}, to:{scale:1.2,x:-3,y:-3}}
+  ];
+  const DUR = 7, FADE = 1.4;
+  let built = false, open = false, i = -1, timer = null, loaded = 0, shots = [], busy = false, wheelAcc = 0, wheelT = 0, touchY = null;
+  function build(){
+    if(built) return; built = true;
+    S.forEach((s, k) => {
+      const d = document.createElement('div'); d.className = 'shot'; const im = new Image(); im.alt = ''; im.decoding = 'async'; d.appendChild(im); stage.insertBefore(d, stage.firstChild); shots.push(d);
+      const b = document.createElement('button'); b.innerHTML = `<i></i><span>${s.t}</span>`; b.setAttribute('aria-label', `Chapter ${k+1}: ${s.t}`); b.addEventListener('click', () => go(k)); chap.appendChild(b);
+    });
+    /* load in order; the first two gate the entrance */
+    (function next(k){ if(k >= S.length) return; const im = shots[k].querySelector('img'); im.onload = im.onerror = () => { loaded++; gsap.to('#dioBar', {scaleX: Math.min(1, loaded / 2), duration:.4, ease:'power2.out'}); if(loaded === 2 && open){ enter.classList.add('off'); go(0); } next(k+1); }; im.src = S[k].src; })(0);
+    if(DIO_URL){ const f = document.createElement('iframe'); f.src = DIO_URL; f.allow = 'fullscreen; xr-spatial-tracking; accelerometer; gyroscope'; f.title = 'District.io — Dubai Silicon Oasis in 3D'; stage.appendChild(f); $('#dioFull').href = DIO_URL; $('#dioFull').hidden = false; }
+  }
+  function go(k, dir){
+    if(busy || !open) return; const n = (k + S.length) % S.length; if(n === i) return;
+    busy = true; clearTimeout(timer); const prev = i; i = n; const s = S[i], sh = shots[i];
+    root.classList.add('moved');
+    $$('button', chap).forEach((b, m) => { b.classList.toggle('on', m === i); gsap.killTweensOf(b); b.style.setProperty('--p', m < i ? 1 : 0); });
+    const bar = $$('button', chap)[i]; gsap.fromTo(bar, {'--p':0}, {'--p':1, duration:DUR, ease:'none'});
+    gsap.killTweensOf(sh); gsap.set(sh, {zIndex:2});
+    gsap.fromTo(sh, {opacity:0, scale:s.from.scale, xPercent:s.from.x, yPercent:s.from.y}, {opacity:1, duration:FADE, ease:'power2.inOut'});
+    gsap.to(sh, {scale:s.to.scale, xPercent:s.to.x, yPercent:s.to.y, duration:DUR + FADE + .5, ease:'none'});
+    if(prev > -1){ const ps = shots[prev]; gsap.set(ps, {zIndex:1}); gsap.to(ps, {opacity:0, duration:FADE, ease:'power2.inOut', delay:.1}); }
+    $('#dioK').textContent = `0${i+1} / 0${S.length}`;
+    const tt = $('#dioTitle'), tx = $('#dioText');
+    gsap.to([tt, tx], {opacity:0, y:-8, duration:.3, ease:'power2.in', onComplete(){ tt.textContent = s.title; tx.textContent = s.text; gsap.fromTo(tt, {yPercent:110}, {yPercent:0, duration:1, ease:'expo.out'}); gsap.fromTo([tt, tx], {opacity:0, y:12}, {opacity:1, y:0, duration:.9, ease:'power3.out', stagger:.08}); }});
+    const alt = $('#dioAlt'), o = {v: parseInt(alt.textContent) || 0}; gsap.to(o, {v: parseInt(s.alt), duration:1.6, ease:'power3.out', onUpdate(){ alt.textContent = Math.round(o.v).toLocaleString('en') + ' m'; }}); $('#dioPos').textContent = s.pos;
+    setTimeout(() => busy = false, 700);
+    timer = setTimeout(() => go(i + 1), DUR * 1000);
+  }
+  function onKey(e){ if(e.key === 'Escape') close(); else if(e.key === 'ArrowRight' || e.key === 'ArrowDown') go(i + 1); else if(e.key === 'ArrowLeft' || e.key === 'ArrowUp') go(i - 1); }
+  function onWheel(e){ e.preventDefault(); const now = performance.now(); if(now - wheelT < 900) return; wheelAcc += e.deltaY; if(Math.abs(wheelAcc) > 40){ go(i + (wheelAcc > 0 ? 1 : -1)); wheelAcc = 0; wheelT = now; } }
+  function onTS(e){ touchY = e.touches[0].clientY; } function onTE(e){ if(touchY === null) return; const d = e.changedTouches[0].clientY - touchY; touchY = null; if(Math.abs(d) > 40) go(i + (d < 0 ? 1 : -1)); }
+  function show(){
+    if(open) return; build(); open = true; if(typeof closeMenu === 'function') closeMenu(); root.classList.add('on'); root.setAttribute('aria-hidden', 'false'); document.body.classList.add('dio-open'); if(lenis) lenis.stop();
+    document.addEventListener('keydown', onKey); root.addEventListener('wheel', onWheel, {passive:false}); root.addEventListener('touchstart', onTS, {passive:true}); root.addEventListener('touchend', onTE);
+    if(loaded >= 2){ enter.classList.add('off'); go(0); }
+    $('#dioClose').focus();
+    if(location.hash !== '#district') history.replaceState(null, '', '#district');
+  }
+  function close(){
+    if(!open) return; open = false; clearTimeout(timer); root.classList.remove('on', 'moved'); root.setAttribute('aria-hidden', 'true'); document.body.classList.remove('dio-open'); if(lenis) lenis.start();
+    document.removeEventListener('keydown', onKey); root.removeEventListener('wheel', onWheel); root.removeEventListener('touchstart', onTS); root.removeEventListener('touchend', onTE);
+    setTimeout(() => { shots.forEach(s => { gsap.killTweensOf(s); gsap.set(s, {opacity:0}); }); i = -1; enter.classList.remove('off'); }, 750);
+    if(location.hash === '#district') history.replaceState(null, '', location.pathname + location.search);
+    document.body.classList.remove('menu-open'); $('#mnav').classList.remove('on'); $('#burger').setAttribute('aria-expanded', 'false');
+  }
+  $$('[data-dio]').forEach(a => { a.addEventListener('click', e => { e.preventDefault(); show(); }); a.addEventListener('pointerenter', build, {once:true}); });
+  $('#dioClose').addEventListener('click', close);
+  return {show, close};
+})();
+
+/* ─── loader ─── */
+(async function loader(){
+  await buildLoaderLogo();
+  const l = $('#loader'), paths = $$('#loaderLogo path');
+  const tl = gsap.timeline({onComplete(){ l.remove(); if(lenis){ lenis.start(); lenis.scrollTo(window.scrollY, {immediate:true, force:true}); } ScrollTrigger.refresh(); if(location.hash === '#district') dio.show(); }});
+  tl.to(paths, {opacity:1, duration:.5, ease:'power2.out', stagger:{each:.02, from:'random'}}, .1)
+    .to('.loader-line i', {scaleX:1, duration:1.1, ease:'power2.inOut'}, .2)
+    .to(l, {yPercent:-100, duration:1, ease:'expo.inOut'}, 1.4)
+    .call(() => { $('#nav').classList.add('ready'); hero.start(); }, null, 1.8) /* one continuous entrance: copy rises while the curtain is still lifting */
+  if(window.scrollY < 10) tl.from('#heroInner', {scale:.94, duration:1.3, ease:'expo.out', clearProps:'transform'}, 1.55);
+  if(reduce) tl.progress(1);
+})();
+
+/* ─── nav ─── */
+const burger = $('#burger'), mnav = $('#mnav');
+function closeMenu(){ document.body.classList.remove('menu-open'); mnav.classList.remove('on'); burger.setAttribute('aria-expanded','false'); lenis && lenis.start(); }
+burger.addEventListener('click', () => { const open = !mnav.classList.contains('on'); document.body.classList.toggle('menu-open', open); mnav.classList.toggle('on', open); burger.setAttribute('aria-expanded', open); open ? (lenis && lenis.stop()) : (lenis && lenis.start()); });
+
+/* ─── scroll ─── */
+function initScroll(){
+  ScrollTrigger.create({ trigger:'#top', start:'bottom 90px', onEnter(){ document.body.classList.add('scrolled'); }, onLeaveBack(){ document.body.classList.remove('scrolled'); } });
+  /* expanded bar → compact pill (FLIP on width, CSS transitions on everything inside) */
+  const navEl = $('#pill'); let compact = false;
+  const setCompact = on => {
+    if(on === compact) return; compact = on;
+    const first = navEl.getBoundingClientRect().width;
+    navEl.classList.toggle('compact', on); gsap.set(navEl, {clearProps:'width'});
+    const last = navEl.getBoundingClientRect().width;
+    if(reduce) return;
+    gsap.fromTo(navEl, {width:first}, {width:last, duration:.8, ease:'expo.out', overwrite:true, clearProps:'width'});
+  };
+  ScrollTrigger.create({ trigger:'#top', start:'top -70px', onEnter:()=>setCompact(true), onLeaveBack:()=>setCompact(false) });
+  /* planner bar docks into the hero: hero pins briefly, the bar slides up over the image */
+  const dock = $('#planDock');
+  const setDockH = () => document.documentElement.style.setProperty('--dockH', dock.offsetHeight + 'px');
+  setDockH(); new ResizeObserver(() => { setDockH(); ScrollTrigger.refresh(); }).observe(dock);
+  /* no pin: the page scrolls immediately; the bar starts below the hero (above the card) and glides up to the hero's bottom edge over the first ~360px of scroll */
+  gsap.fromTo([dock, $('.planner .wrap')], {y:() => dock.offsetHeight * .5 + 40}, {y:0, ease:'none', immediateRender:true, scrollTrigger:{ trigger:'#top', start:'top top', end:'+=360', scrub:.3, invalidateOnRefresh:true }}); /* the planner card glides with the bar so the bar never overlaps it */
+  if(window.scrollY > 70) { navEl.classList.add('compact'); compact = true; }
+  gsap.to('.slide .media', { yPercent: 16, ease:'none', scrollTrigger:{ trigger:'#top', start:'top top', end:'bottom top', scrub:true } });
+  gsap.to('.hero-copy', { yPercent: -14, opacity:.15, ease:'none', scrollTrigger:{ trigger:'#top', start:'top top', end:'bottom top', scrub:true } });
+  gsap.to('#heroInner', { scale:.96, ease:'none', scrollTrigger:{ trigger:'#top', start:'top top', end:'bottom top', scrub:true } });
+
+  $$('[data-parallax]').forEach(img => { const k = parseFloat(img.dataset.parallax) || .1; gsap.fromTo(img, {yPercent: -k*50}, { yPercent: k*50, ease:'none', scrollTrigger:{ trigger: img.parentElement, start:'top bottom', end:'bottom top', scrub:true } }); });
+
+  ScrollTrigger.batch('[data-reveal]', { start:'top 88%', onEnter: els => els.forEach((el, n) => setTimeout(() => el.classList.add('in'), n*90)), once:true });
+  $$('[data-stagger]').forEach(g => { const kids = [...g.children]; gsap.set(kids, {opacity:0, y:40}); ScrollTrigger.create({ trigger:g, start:'top 85%', once:true, onEnter(){ gsap.to(kids, {opacity:1, y:0, duration:1.1, ease:'expo.out', stagger:.08}); } }); });
+  $$('[data-split]').forEach(h => { const w = $$('.word > span', h); ScrollTrigger.create({ trigger:h, start:'top 88%', once:true, onEnter(){ gsap.to(w, {y:'0%', duration:1.1, ease:'expo.out', stagger:.04}); } }); });
+  $$('[data-count]').forEach(el => { const target = +el.dataset.count, suf = el.dataset.suffix || ''; ScrollTrigger.create({ trigger:el, start:'top 90%', once:true, onEnter(){ const o = {v:0}; gsap.to(o, {v:target, duration:2.6, ease:'expo.out', onUpdate(){ el.textContent = Math.round(o.v).toLocaleString('en-US') + suf; }}); }}); });
+  $$('[data-wm]').forEach(w => gsap.fromTo(w, {yPercent:-18}, {yPercent:18, ease:'none', scrollTrigger:{ trigger:w.parentElement, start:'top bottom', end:'bottom top', scrub:true }}));
+  $$('[data-scrub]').forEach(p => gsap.to($$('.w', p), { opacity:1, ease:'none', stagger:.06, scrollTrigger:{ trigger:p, start:'top 80%', end:'bottom 45%', scrub:.4 } }));
+
+  /* business rail: pinned horizontal scroll (desktop) */
+  const track = $('#railTrack'), pin = $('#railPin'), railBar = $('#railBar');
+  ScrollTrigger.matchMedia({ '(min-width: 900px)': () => {
+    const dist = () => track.scrollWidth - innerWidth;
+    gsap.to(track, { x: () => -dist(), ease:'none', scrollTrigger:{ trigger: pin, start:'center center', end: () => '+=' + dist(), pin:true, scrub:.6, invalidateOnRefresh:true, anticipatePin:1, onUpdate(st){ railBar.style.transform = `scaleX(${st.progress})`; } } });
+  }});
+
+  /* industries hover list */
+  const stage = $('#indStage'), rows = $$('.ind-row');
+  rows.forEach(r => { const im = new Image(); im.src = r.dataset.img; im.alt=''; stage.insertBefore(im, stage.firstChild); r._img = im; });
+  rows[0]._img.classList.add('on');
+  const setInd = r => { rows.forEach(x => x.classList.toggle('on', x === r)); $$('img', stage).forEach(x => x.classList.toggle('on', x === r._img)); $('#indCap').innerHTML = $('h3', r).innerHTML; $('#indNo').textContent = $('.no', r).textContent + ' / 08'; };
+  rows.forEach(r => { r.addEventListener('pointerenter', () => setInd(r)); r.addEventListener('focus', () => setInd(r)); });
+
+  /* facilities scrollytelling */
+  const fst = $('#facStage'), frows = $$('.frow');
+  frows.forEach(r => { const im = new Image(); im.src = r.dataset.img; im.alt=''; fst.insertBefore(im, fst.firstChild); r._img = im; });
+  frows[0]._img.classList.add('on');
+  const setFac = r => { frows.forEach(x => x.classList.toggle('on', x === r)); $$('img', fst).forEach(x => x.classList.toggle('on', x === r._img)); $('#facK').textContent = $('.no', r).textContent + ' / 06'; };
+  frows.forEach(r => ScrollTrigger.create({ trigger:r, start:'top 55%', end:'bottom 55%', onEnter:()=>setFac(r), onEnterBack:()=>setFac(r) }));
+
+  /* gallery */
+  const gal = $('#gal'), gtrack = $('#galTrack'), bar = $('#galBar');
+  let x = 0, max = 0, dragging = false, sx = 0, startX = 0, moved = false;
+  const measure = () => { max = Math.max(0, gtrack.scrollWidth - gal.clientWidth); };
+  const render = () => { x = Math.max(0, Math.min(max, x)); gsap.to(gtrack, {x:-x, duration:.9, ease:'power3.out', overwrite:true}); gsap.to(bar, {scaleX: max ? x/max : 1, duration:.9, ease:'power3.out', overwrite:true}); };
+  measure(); addEventListener('resize', () => { measure(); render(); });
+  $('.ctrl.next', gal).addEventListener('click', () => { moved = true; x += gal.clientWidth * .6; render(); });
+  $('.ctrl.prev', gal).addEventListener('click', () => { moved = true; x -= gal.clientWidth * .6; render(); });
+  gal.addEventListener('wheel', e => { if(Math.abs(e.deltaX) > Math.abs(e.deltaY)){ e.preventDefault(); moved = true; x += e.deltaX; render(); } }, {passive:false});
+  gal.addEventListener('pointerdown', e => { if(e.target.closest('.ctrl')) return; dragging = true; sx = e.clientX; startX = x; gal.setPointerCapture(e.pointerId); });
+  gal.addEventListener('pointermove', e => { if(!dragging) return; moved = true; x = Math.max(0, Math.min(max, startX - (e.clientX - sx))); gsap.set(gtrack, {x:-x}); gsap.set(bar, {scaleX: max ? x/max : 1}); });
+  const up = () => { dragging = false; render(); };
+  gal.addEventListener('pointerup', up); gal.addEventListener('pointercancel', up);
+  ScrollTrigger.create({ trigger: gal, start:'top 85%', end:'bottom 15%', onUpdate(st){ if(dragging || moved) return; x = st.progress * Math.min(max, gal.clientWidth*.8); gsap.set(gtrack,{x:-x}); gsap.set(bar,{scaleX: max ? x/max : 1}); } });
+  gsap.from($$('img', gtrack), {opacity:0, y:30, duration:1.2, ease:'expo.out', stagger:.06, scrollTrigger:{ trigger:gal, start:'top 85%', once:true }});
+
+  ScrollTrigger.refresh();
+}
+
+/* scroll setup runs now (before the browser's load-time fragment jump) so pinned sections never shift the page later */
+initScroll();
+
+
+/* ─── planner ─── */
+(() => {
+  const I = {
+    home:'<svg viewBox="0 0 24 24" fill="none"><path d="M3 11l9-7 9 7M5 10v10h14V10" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>',
+    bed:'<svg viewBox="0 0 24 24" fill="none"><path d="M3 18V8M3 14h18v4M3 14V11a2 2 0 012-2h6v5M21 14v-2a3 3 0 00-3-3h-7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    school:'<svg viewBox="0 0 24 24" fill="none"><path d="M2 9l10-5 10 5-10 5-10-5zM6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5M22 9v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    heart:'<svg viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.5-7 10-7 10z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>',
+    grid:'<svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7"/></svg>',
+    desk:'<svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M8 20h8M12 16v4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>',
+    user:'<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.7"/><path d="M4 20a8 8 0 0116 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>',
+    train:'<svg viewBox="0 0 24 24" fill="none"><rect x="5" y="3" width="14" height="14" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M5 10h14M9 21l1.5-3M15 21l-1.5-3M9 14h.01M15 14h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>',
+    spark:'<svg viewBox="0 0 24 24" fill="none"><path d="M12 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5zM19 15l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>',
+    rocket:'<svg viewBox="0 0 24 24" fill="none"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2M14 4c3 0 6 3 6 6-2 4-7 8-11 10l-5-5c2-4 6-9 10-11zM15 9h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    lab:'<svg viewBox="0 0 24 24" fill="none"><path d="M9 3h6M10 3v5l-5.5 9A2 2 0 006.2 20h11.6a2 2 0 001.7-3L14 8V3" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>',
+    drone:'<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.7"/><path d="M4 4l5 5M20 4l-5 5M4 20l5-5M20 20l-5-5M2 4h4M18 4h4M2 20h4M18 20h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>',
+    flag:'<svg viewBox="0 0 24 24" fill="none"><path d="M5 21V4h11l-1.5 3L16 10H5" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>',
+    doc:'<svg viewBox="0 0 24 24" fill="none"><path d="M7 3h7l5 5v13H7zM14 3v5h5M9 13h6M9 17h6" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>',
+    building:'<svg viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2M10 21v-3h4v3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>',
+    chat:'<svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v11H9l-5 4V5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>',
+    cal:'<svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>',
+    mic:'<svg viewBox="0 0 24 24" fill="none"><rect x="9" y="3" width="6" height="11" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M5 11a7 7 0 0014 0M12 18v3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>',
+    pin:'<svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-6-5.5-6-11a6 6 0 0112 0c0 5.5-6 11-6 11z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="2" stroke="currentColor" stroke-width="1.7"/></svg>',
+  };
+  const D = {
+    live:{go:'#life',img:'assets/img/dio-14.jpg?v=1792930961',k:'Live',cap:'Homes, schools and parks, minutes apart.',title:'Live in a city built around a 15-minute walk.',tiles:[['home','Apartments & villas','Cedre and Semmer Villas, lakeside apartments and family compounds inside the city.','#life','Browse homes'],['bed','Short stay','Radisson RED and serviced apartments for a week, a month or a project.','#life','See options'],['school','Schools & healthcare','Nurseries, international schools and clinics within a 15-minute walk.','#life','Explore'],['heart','Residents support','Permits, community services and the DSO residents portal.','#life','Get support']]},
+    work:{go:'#business',img:'assets/img/dio-10.jpg?v=1792930961',k:'Work',cap:'40,000+ companies already build here.',title:'Work where 40,000 companies already build the future.',tiles:[['grid','Explore companies','40,000+ licensed companies across 11 clusters. Find who already builds here.','#industries','Browse clusters'],['desk','Coworking at Dtec','Flexi-desks and studios in the region\'s largest tech coworking campus.','#facilities','See spaces'],['user','Careers at DSO','Roles at the authority and at companies in the zone.','#contact','View roles'],['train','Getting here','Two airports within 25 minutes, Metro Blue Line, parking and shuttles.','#life','Plan the commute']]},
+    partner:{go:'#initiatives',img:'assets/img/dio-12.jpg?v=1792930961',k:'Partner',cap:'Plug into the innovation community.',title:'Partner with the Middle East\'s growing centre of innovation and knowledge.',tiles:[['spark','Innovation community','Programmes, meet-ups and a Doers Summit host city. Plug into the network.','#initiatives','Join in'],['rocket','Startup programmes','Dtec, Oraseya Capital and accelerator cohorts from idea to Series A.','#business','Apply'],['lab','R&D & RIT Dubai','University labs, research partnerships and talent pipelines on campus.','#why','Partner with us'],['drone','Pilots & testbeds','Drone corridors, robotics and autonomous mobility trials on real streets.','#industries','Run a pilot']]},
+    grow:{go:'#enquire',img:'assets/img/dio-26.jpg?v=1792930961',k:'Grow',cap:'Licensed in days, owned 100% by you.',title:'Grow a company that is 100% yours, licensed in days.',tiles:[['flag','Set up a company','100% ownership, 0% tax on qualifying income, licensed in days.','#enquire','Start now'],['doc','Licence types','Commercial, service, industrial and dual licences compared.','#enquire','Compare'],['building','Compare offices','From one desk to a built-to-suit headquarters on your own plot.','#facilities','See facilities'],['chat','Talk to an advisor','A setup specialist walks you through costs, visas and timelines.','#enquire','Book a call']]},
+    engage:{go:'#enquire',img:'assets/img/hero-dio-21.jpg?v=1792930961',k:'Engage',cap:'Venues for 20 to 2,000 guests.',title:'Engage a community of 100,000 people in one place.',tiles:[['cal','Plan your event','Auditoriums, rooftops and campus lawns for 20 to 2,000 guests.','#enquire','Request a venue'],['mic','Host a summit','Doers Summit, Climate Week and industry days call DSO home.','#news','See what\'s on'],['pin','Venues & spaces','DSO HQ auditorium, Dubai Digital Park and Dtec event floor.','#facilities','Explore venues'],['user','Community events','Weekly meet-ups, demo days and founder breakfasts.','#news','Event calendar']]},
+  };
+  const bar = $('#planBar'), panel = $('#planPanel'), go = $('#planGo'), stage = $('#planStage'); if(!bar) return;
+  Object.keys(D).forEach(k => { const im = new Image(); im.src = D[k].img; im.alt = ''; im.loading = 'lazy'; stage.insertBefore(im, stage.firstChild); D[k]._img = im; });
+  const arrow = '<svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const render = key => {
+    const d = D[key]; go.setAttribute('href', d.go);
+    Object.values(D).forEach(x => x._img.classList.toggle('on', x === d)); $('#planK').textContent = d.k; $('#planCap').textContent = d.cap; const tt = $('#planTitle'); tt.textContent = d.title; if(!reduce) gsap.fromTo(tt, {opacity:0, y:10}, {opacity:1, y:0, duration:.6, ease:'expo.out'});
+    panel.innerHTML = d.tiles.map(([ic,t,desc,href,lk]) => `<a class="ptile" href="${href}"><span class="ic">${I[ic]}</span><b>${t}</b><span>${desc}</span><span class="lk">${lk} ${arrow}</span></a>`).join('');
+    $$('.ptile', panel).forEach(a => a.addEventListener('click', e => { const t = $(a.getAttribute('href')); if(!t) return; e.preventDefault(); scrollTo(t); }));
+    if(!reduce) gsap.fromTo($$('.ptile', panel), {opacity:0, y:14}, {opacity:1, y:0, duration:.6, ease:'expo.out', stagger:.06});
+  };
+  let cur = 'live';
+  const pick = b => { if(b.dataset.seg === cur) return; cur = b.dataset.seg; $$('.seg', bar).forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-selected', x === b); }); render(cur); };
+  $$('.seg', bar).forEach(b => { b.addEventListener('pointerenter', () => pick(b)); b.addEventListener('focus', () => pick(b)); b.addEventListener('click', () => pick(b)); });
+  render('live');
+})();
+
+/* ─── tabs ─── */
+(() => { const tabs = $('#tabs'); const btns = $$('nav button', tabs), panels = $$('.panel', tabs);
+  btns.forEach(b => b.addEventListener('click', () => { const k = +b.dataset.tab; btns.forEach(x => x.classList.toggle('on', x === b)); panels.forEach((p, n) => p.classList.toggle('on', n === k)); gsap.fromTo([...$('.tx', panels[k]).children, $('.pic', panels[k])], {opacity:0, y:14}, {opacity:1, y:0, duration:.7, ease:'expo.out', stagger:.06}); }));
+})();
+
+/* ─── enquire ─── */
+(() => { const opts = $('#opts'), form = $('#enqForm'), topic = $('#enqTopic'), ok = $('#enqOk');
+  $$('.opt', opts).forEach(b => b.addEventListener('click', () => { topic.value = b.dataset.topic; opts.style.display = 'none'; form.classList.add('on'); gsap.fromTo(form.children, {opacity:0, y:12}, {opacity:1, y:0, duration:.6, ease:'expo.out', stagger:.05}); $('input[name=name]', form).focus({preventScroll:true}); ScrollTrigger.refresh(); }));
+  $('#enqBack').addEventListener('click', () => { form.classList.remove('on'); opts.style.display = ''; gsap.fromTo(opts.children, {opacity:0, y:12}, {opacity:1, y:0, duration:.6, ease:'expo.out', stagger:.05}); ScrollTrigger.refresh(); });
+  form.addEventListener('submit', e => { e.preventDefault(); const name = $('input[name=name]', form), email = $('input[name=email]', form); if(!name.value.trim() || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value)){ gsap.fromTo(form, {x:-6}, {x:0, duration:.5, ease:'elastic.out(1,.3)'}); (name.value.trim() ? email : name).focus(); return; } /* no backend yet */ $$('.row, textarea, .foot', form).forEach(el => el.style.display = 'none'); ok.style.display = 'block'; });
+})();
+
+/* ─── faq ─── */
+$$('.acc details').forEach(d => d.addEventListener('toggle', () => { if(d.open) $$('.acc details').forEach(o => { if(o !== d) o.open = false; }); ScrollTrigger.refresh(); }));
+
+/* ─── magnetic ─── */
+if(fine && !reduce){ $$('.btn, .gal .ctrl').forEach(b => { b.addEventListener('pointermove', e => { const r = b.getBoundingClientRect(); gsap.to(b, {x:(e.clientX - r.left - r.width/2)*.18, y:(e.clientY - r.top - r.height/2)*.18, duration:.5, ease:'power3.out'}); }); b.addEventListener('pointerleave', () => gsap.to(b, {x:0, y:0, duration:.8, ease:'elastic.out(1,.4)'})); }); }
+</script>
+</body>
+</html>
